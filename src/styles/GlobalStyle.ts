@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
+${reset}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,10 +17,13 @@ html,body {
 
 body {
     color: #000000;
-    background: #FFFFFF
+    background: #FFFFFF;
+    font-family: 'Pretendard';
 }
 
 ul, ol {
     list-style: none;
 }
 `
+
+export default GlobalStyle
