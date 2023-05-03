@@ -1,5 +1,5 @@
-import useDraggable from "@/hooks/useDraggable";
-import { SimplePosition } from "@/interfaces/Position";
+import useDraggable from "../../hooks/useDraggable";
+import { SimplePosition } from "../../interfaces/Position";
 import React, { MutableRefObject } from "react";
 import Draggable from "react-draggable";
 import styled from "styled-components";
@@ -12,7 +12,6 @@ const DraggableNode = styled.div<NodeProps>`
 	display: inline-block;
     
     position: absolute;
-    background-color: blueviolet;
     transition: ${props => props.needFixed ? `transform 0.3s` : `transform 0.1s`};
 `
 

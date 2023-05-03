@@ -1,4 +1,4 @@
-import Position, { SimplePosition } from "@/interfaces/Position";
+import Position, { SimplePosition } from "../interfaces/Position";
 import { MutableRefObject, RefObject, useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { DraggableData, DraggableEvent, DraggableEventHandler } from "react-draggable";
 

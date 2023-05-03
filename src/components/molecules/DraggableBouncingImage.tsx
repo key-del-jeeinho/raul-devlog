@@ -1,4 +1,4 @@
-import { ImageProps, StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
 import BouncingImage from "../atoms/BouncingImage"
 import DraggableComponent from "./DraggableComponent"
 
