@@ -1,13 +1,13 @@
-import { ImageProps } from "next/image"
+import { ImageProps, StaticImageData } from "next/image"
 import BouncingImage from "../atoms/BouncingImage"
 import DraggableComponent from "./DraggableComponent"
 
 interface Props {
     isFixed: boolean,
-    src: string,
+    src: string | StaticImageData,
     alt: string,
-    width: number | null,
-    height: number | null
+    width?: number,
+    height?: number
 }
 
 export default function DraggableBouncingImage({src, alt, isFixed, width, height}: Props) {

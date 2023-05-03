@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import Image from 'next/image';
-import { useRef, useState } from "react";
+import Image, { StaticImageData } from 'next/image';
+import { useRef } from "react";
 
 interface BouncableImageProps {
   isAnimating: boolean
@@ -18,10 +18,10 @@ const BouncableImage = styled.div<BouncableImageProps>`
 `
 
 interface Props {
-  src: string,
+  src: string | StaticImageData,
   alt: string,
-  width: number | null,
-  height: number | null
+  width?: number,
+  height?: number
 }
 
 export default function BouncingImage(props : Props) {
