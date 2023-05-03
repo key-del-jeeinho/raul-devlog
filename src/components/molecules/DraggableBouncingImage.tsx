@@ -1,5 +1,5 @@
 import { ImageProps } from "next/image"
-import BouncingImage from "./BouncingImage"
+import BouncingImage from "../atoms/BouncingImage"
 import DraggableComponent from "./DraggableComponent"
 
 interface Props {
