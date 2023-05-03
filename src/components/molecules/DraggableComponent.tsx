@@ -4,10 +4,6 @@ import React, { MutableRefObject } from "react";
 import Draggable from "react-draggable";
 import styled from "styled-components";
 
-interface Props {
-    children: JSX.Element,
-    isFixed: boolean
-}
 interface NodeProps {
     needFixed: boolean
 }
@@ -19,6 +15,11 @@ const DraggableNode = styled.div<NodeProps>`
     background-color: blueviolet;
     transition: ${props => props.needFixed ? `transform 0.3s` : `transform 0.1s`};
 `
+
+interface Props {
+    children: JSX.Element,
+    isFixed: boolean
+}
 
 export default function DraggableComponent({ children, isFixed }: Props) {
     const initialPosition = new SimplePosition(0, 0)
