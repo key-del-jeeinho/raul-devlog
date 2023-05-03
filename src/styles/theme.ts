@@ -5,3 +5,4 @@ export const lightTheme: DefaultTheme = {
         titleText: "#000000"
     }
 }
+export const defaultTheme: DefaultTheme = lightTheme
