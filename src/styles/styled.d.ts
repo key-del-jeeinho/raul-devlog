@@ -21,9 +21,14 @@ declare module "styled-components" {
         },
         font_weights: {
             label: string,
+            title: string,
         },
         font_sizes: {
             label: string
+            title: string
+        },
+        font_famillies: {
+            title: string
         },
         textures: {
             box_texture__label_texture: string

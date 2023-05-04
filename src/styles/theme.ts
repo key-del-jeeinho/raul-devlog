@@ -28,9 +28,14 @@ export const lightTheme: DefaultTheme = {
     },
     font_weights: {
         label: "bold",
+        title: "bold",
     },
     font_sizes: {
-        label: "24pt"
+        label: "24pt",
+        title: "96pt",
+    },
+    font_famillies: {
+        title: "PyeongChang"
     },
     textures: {
         box_texture__label_texture: paper002.src
