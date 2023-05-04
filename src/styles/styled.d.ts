@@ -11,7 +11,10 @@ declare module "styled-components" {
             text_outline__label_frame: string,
 
             box_outline__label_frame: string,
-            
+            box_outline__label_colored: string,
+            box_outline__label_texture: string,
+            box_outline__label_monotone: string,
+
             box_fill__label_colored: string,
             box_fill__label_frame: string,
             box_fill__label_monotone: string,

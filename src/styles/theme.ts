@@ -11,15 +11,18 @@ const white = "#FFFFFF"
 export const lightTheme: DefaultTheme = {
     colors: {
         text_fill__label_texture: black,
+        box_outline__label_texture: black,
 
         text_fill__label_colored: primary,
         box_fill__label_colored: white,
+        box_outline__label_colored: black,
 
         text_outline__label_frame: black,
         box_outline__label_frame: black,
         box_fill__label_frame: white,
         text_fill__label_frame: white,
 
+        box_outline__label_monotone: black,
         text_fill__label_monotone: white,
         box_fill__label_monotone: black,
     },
