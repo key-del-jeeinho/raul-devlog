@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['source.unsplash.com']
-  }
+  },
+  compiler: {
+    styledComponents: true,
+  },
 }
 
 module.exports = nextConfig
