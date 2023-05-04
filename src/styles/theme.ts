@@ -13,6 +13,9 @@ export const lightTheme: DefaultTheme = {
         text_fill__title: black,
         text_fill__sub_title: black,
 
+        text_fill__primary_button: white,
+        box_fill__primary_button: primary,
+
         text_fill__label_texture: black,
         box_outline__label_texture: black,
 
