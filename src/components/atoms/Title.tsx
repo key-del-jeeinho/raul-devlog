@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-const TitleStyle = styled.div`
+const TitleStyle = styled.span`
     display: inline-block;
-    font-family: ${(props) => props.theme.font_famillies.title};
+    font-family: ${(props) => props.theme.font_families.title};
     font-size: ${(props) => props.theme.font_sizes.title};
     font-weight: ${(props) => props.theme.font_weights.title};
 `

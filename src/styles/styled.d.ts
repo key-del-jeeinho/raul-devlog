@@ -27,7 +27,7 @@ declare module "styled-components" {
             label: string
             title: string
         },
-        font_famillies: {
+        font_families: {
             title: string
         },
         textures: {

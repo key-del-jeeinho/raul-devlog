@@ -34,7 +34,7 @@ export const lightTheme: DefaultTheme = {
         label: "24pt",
         title: "96pt",
     },
-    font_famillies: {
+    font_families: {
         title: "PyeongChang"
     },
     textures: {
