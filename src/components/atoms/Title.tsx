@@ -5,6 +5,7 @@ const TitleStyle = styled.span`
     font-family: ${(props) => props.theme.font_families.title};
     font-size: ${(props) => props.theme.font_sizes.title};
     font-weight: ${(props) => props.theme.font_weights.title};
+    color: ${(props) => props.theme.colors.text_fill__title}
 `
 
 interface Props {
