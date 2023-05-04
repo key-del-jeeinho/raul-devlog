@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import LabelType from "../../interfaces/LabelType"
+import LabelType, { getRandomLabelType } from "../../interfaces/LabelType"
 
 interface LabelStyleProps {
     type: LabelType
@@ -42,5 +42,6 @@ interface Props {
 }
 
 export default function Label({children, type}: Props) {
-    return (<LabelStyle type={type}>{children}</LabelStyle>)
+    if(type == 'random') return (<LabelStyle type={getRandomLabelType()}>{children}</LabelStyle>)
+    else return (<LabelStyle type={type}>{children}</LabelStyle>)
 }
