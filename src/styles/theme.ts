@@ -10,6 +10,9 @@ const white = "#FFFFFF"
 
 export const lightTheme: DefaultTheme = {
     colors: {
+        text_fill__title: black,
+        text_fill__sub_title: black,
+
         text_fill__label_texture: black,
         box_outline__label_texture: black,
 
@@ -29,16 +32,19 @@ export const lightTheme: DefaultTheme = {
     font_weights: {
         label: "bold",
         title: "bold",
+        sub_title: "regular"
     },
     font_sizes: {
         label: "24pt",
         title: "96pt",
+        sub_title: "24pt"
     },
     font_families: {
-        title: "PyeongChang"
+        title: "PyeongChang",
+        sub_title: "Pretendard",
     },
     textures: {
-        box_texture__label_texture: paper002.src
+        box_texture__label_texture: paper002.src,
     },
 }
 export const defaultTheme: DefaultTheme = lightTheme

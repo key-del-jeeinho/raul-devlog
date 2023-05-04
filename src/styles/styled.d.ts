@@ -3,6 +3,8 @@ import "styled-components"
 declare module "styled-components" {
     export interface DefaultTheme {
         colors: {
+            text_fill__title: string,
+            text_fill__sub_title: string,
             text_fill__label_colored: string,
             text_fill__label_texture: string,
             text_fill__label_monotone: string,
@@ -22,13 +24,16 @@ declare module "styled-components" {
         font_weights: {
             label: string,
             title: string,
+            sub_title: string
         },
         font_sizes: {
             label: string
             title: string
+            sub_title: string
         },
         font_families: {
             title: string
+            sub_title: string
         },
         textures: {
             box_texture__label_texture: string
