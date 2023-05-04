@@ -1,12 +1,12 @@
 import styled from "styled-components"
-
-type LabelType = 'colored'|'frame'|'texture'|'monotone'|'random'
+import LabelType from "../../interfaces/LabelType"
 
 interface LabelStyleProps {
     type: LabelType
 }
 
 const LabelStyle = styled.div<LabelStyleProps>`
+    user-select: none;
     display: inline-block;
     padding: 0px 10px 0px 10px;
     ${(props) => {switch(props.type) {
@@ -37,10 +37,10 @@ const LabelStyle = styled.div<LabelStyleProps>`
 `
 
 interface Props {
-    text: string,
+    children: string,
     type: LabelType
 }
 
-export default function Label(props: Props) {
-    return (<LabelStyle type={props.type}>{props.text}</LabelStyle>)
+export default function Label({children, type}: Props) {
+    return (<LabelStyle type={type}>{children}</LabelStyle>)
 }
