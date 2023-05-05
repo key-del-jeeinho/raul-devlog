@@ -1,20 +1,17 @@
 import styled from "styled-components"
 import Image, { StaticImageData } from 'next/image';
-import { useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import useMouseDown from "../../hooks/useMouseDown";
 
-interface BouncableImageProps {
-  isAnimating: boolean
+interface BouncableImageStyleProps {
+  sizeRatio: number
 }
 
-const BouncableImage = styled.span<BouncableImageProps>`
-  &.animate > *{
-    transform: scale(1.05);
-    transition: transform 0.1s;
+const BouncableImageStyle = styled.span<BouncableImageStyleProps>`
+  > *{
+    transform: scale(${(props) => props.sizeRatio});
+    transition: transform 500ms;
   }
-  & > * {
-    transform: scale(1);
-    transition: transform 0.1s;
-  }  
 `
 
 interface Props {
@@ -25,37 +22,31 @@ interface Props {
 }
 
 export default function BouncingImage(props : Props) {
-    const bouncableImageRef = useRef<HTMLDivElement>(null);
-    const isAnimating = useRef(false);
+    const [isMouseDown] = useMouseDown()
+    const [isMouseDownInElement, setMouseDownInElement] = useState(false);
+    const [isMouseEnter, setMouseEnter] = useState(false)
   
-    const handleMouseDown = () => {
-      if (!isAnimating.current) {
-        if(!bouncableImageRef.current) return
-        isAnimating.current = true;
-        bouncableImageRef.current.classList.add("animate");
-      }
-    };
+    useEffect(() => {
+      if(!isMouseDown) setMouseDownInElement(false)
+    }, [isMouseDown])
 
-    const handleMouseUp = () => {
-      if (isAnimating.current) {
-        if(!bouncableImageRef.current) return
-        bouncableImageRef.current.classList.remove("animate");
-        isAnimating.current = false;
-      }
-    }
+    const sizeRatio = useMemo(() => {
+      if(isMouseDownInElement) return 1.05
+      else if(isMouseEnter) return 0.95
+    }, [isMouseDownInElement, isMouseEnter])
 
     return (
-      <BouncableImage 
-      ref={bouncableImageRef} 
-      isAnimating={isAnimating.current}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
+      <BouncableImageStyle 
+        sizeRatio={sizeRatio??1}
+        onMouseEnter={() => setMouseEnter(true)}
+        onMouseLeave={() => setMouseEnter(false)}
+        onMouseDown={() => setMouseDownInElement(true)}
       ><Image 
         src={props.src}
         alt={props.alt}
         width={props.width??undefined}
         height={props.height??undefined}
         draggable={false}
-      /></BouncableImage>
+      /></BouncableImageStyle>
     )
 }
