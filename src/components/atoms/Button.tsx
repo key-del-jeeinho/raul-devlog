@@ -6,11 +6,11 @@ interface ButtonStyleProps {
 
 const ButtonStyle = styled.span<ButtonStyleProps>`
     position: relative;
-    margin: ${(props) => props.visibleOverflowedShadow 
-        ? "0px 4px 4px 0px" 
-        : "0px 0px 0px 0px"
-    };
     button {
+        margin: ${(props) => props.visibleOverflowedShadow 
+            ? "0px 4px 4px 0px" 
+            : "0px 0px 0px 0px"
+        };
         appearance: none;
         border-style: none;
         padding: 10px 10px 10px 10px;
