@@ -1,6 +1,6 @@
 import useDraggable from "../../hooks/useDraggable";
 import { SimplePosition } from "../../interfaces/Position";
-import React, { MutableRefObject } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 import styled from "styled-components";
 
@@ -9,8 +9,6 @@ interface NodeProps {
 }
 
 const DraggableNode = styled.span<NodeProps>`
-	display: inline-block;
-    
     position: absolute;
     transition: ${props => props.needFixed ? `transform 0.3s` : `transform 0.1s`};
 `

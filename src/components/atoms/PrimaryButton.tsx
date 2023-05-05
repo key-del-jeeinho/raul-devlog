@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 const PrimaryButtonStyle = styled.span`
-    display: inline-block;
     button {
         appearance: none;
         border-style: none;
