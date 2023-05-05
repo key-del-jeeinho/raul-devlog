@@ -12,7 +12,7 @@ type Story = StoryObj<typeof DraggableBouncingLabel>
 export const Label: Story = {
     args: {
         children: 'TEXT HERE',
-        type: 'colored',
+        style: 'colored',
         isFixed: false,
     }
 }

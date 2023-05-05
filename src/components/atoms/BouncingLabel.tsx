@@ -1,31 +1,50 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import LabelSize from "../../interfaces/LabelSize";
 import LabelStyle from "../../interfaces/LabelStyle";
 import Label from "./Label";
 import styled from "styled-components";
 import useMouseDown from "@/hooks/useMouseDown";
 
-interface Props {
-    children: string,
-    style: LabelStyle,
+interface BouncingLabelStyleProps {
+    sizeRatio: number
 }
 
-const BouncingLabelStyle = styled.span`
-    & > * {
-        transition: all 100ms;
+const BouncingLabelStyle = styled.span<BouncingLabelStyleProps>`
+    & > * > * {
+        transition: color 500ms, font-size 500ms;
+        font-size: ${(props) => props.sizeRatio}em;
     }
 `
 
-export default function BouncingLabel({children, style}: Props) {
+interface Props {
+    children: string,
+    style: LabelStyle,
+    size: LabelSize
+}
+
+export default function BouncingLabel({children, style, size}: Props) {
     const [isMouseDown] = useMouseDown()
-    const [size, setSize] = useState<LabelSize>('regular')
+    const [isMouseDownInElement, setMouseDownInElement] = useState(false);
+    const [isMouseEnter, setMouseEnter] = useState(false)
     
     useEffect(() => {
-        if(!isMouseDown) setSize('regular')
-    }, [isMouseDown])
+        if(!isMouseDown) setMouseDownInElement(false)
+      }, [isMouseDown])
+
+      const sizeRatio = useMemo(() => {
+        if(isMouseDownInElement) return 1.05
+        else if(isMouseEnter) return 0.95
+      }, [isMouseDownInElement, isMouseEnter])
 
     return (<BouncingLabelStyle 
-        onMouseDown={() => setSize('bigger')} 
-    ><Label style={style} size={size}>{children}</Label>
+        onMouseEnter={() => setMouseEnter(true)}
+        onMouseLeave={() => setMouseEnter(false)}
+        onMouseDown={() => setMouseDownInElement(true)}
+        sizeRatio={sizeRatio??1}
+    >
+        <Label 
+            style={style}
+            size={size}
+        >{children}</Label>
     </BouncingLabelStyle>)
 }

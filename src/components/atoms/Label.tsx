@@ -2,6 +2,17 @@ import styled from "styled-components"
 import LabelStyle, { getRandomLabelStyle } from "../../interfaces/LabelStyle"
 import LabelSize from "../../interfaces/LabelSize"
 
+interface LabelWapperStyleProps {
+    size: LabelSize
+}
+
+const LabelWapperStyle = styled.span<LabelWapperStyleProps>`
+    font-size: ${(props) => { switch(props.size) {
+        case 'regular': return props.theme.font_sizes.label
+        case 'bigger': return props.theme.font_sizes.bigger_label
+    }}};
+`
+
 interface LabelStyleProps {
     style: LabelStyle,
     size: LabelSize,
@@ -48,5 +59,5 @@ interface Props {
 
 export default function Label({children, style, size}: Props) {
     const calculatedStyle = style == 'random' ? getRandomLabelStyle() : style
-    return (<LabelStyle style={calculatedStyle} size={size}>{children}</LabelStyle>)
+    return (<LabelWapperStyle size={size}><LabelStyle style={calculatedStyle} size={size}>{children}</LabelStyle></LabelWapperStyle>)
 }
