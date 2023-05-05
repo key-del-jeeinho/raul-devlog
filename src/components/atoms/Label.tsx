@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import LabelStyle, { getRandomLabelStyle } from "../../interfaces/LabelStyle"
+import LabelSize from "../../interfaces/LabelSize"
 
 interface LabelStyleProps {
     style: LabelStyle,
