@@ -1,17 +1,17 @@
-import LabelType from "@/interfaces/LabelType";
+import LabelStyle from "@/interfaces/LabelStyle";
 import DraggableComponent from "./DraggableComponent";
 import Label from "../atoms/Label";
 
 interface Props {
     children: string,
-    type: LabelType,
+    type: LabelStyle,
     isFixed: boolean
 }
 
 export default function DraggableLabel({type, children, isFixed}: Props) {
     return (
         <DraggableComponent isFixed={isFixed}>
-            <Label type={type}>{children}</Label>
+            <Label style={type}>{children}</Label>
         </DraggableComponent>
     )
 }

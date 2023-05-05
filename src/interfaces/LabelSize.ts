@@ -1,0 +1,1 @@
+type LabelSize = 'regular'|'bigger'
