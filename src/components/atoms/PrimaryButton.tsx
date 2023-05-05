@@ -12,19 +12,20 @@ const PrimaryButtonStyle = styled.span`
 
         background-color: ${(props) => props.theme.colors.box_fill__primary_button};
         color: ${(props) => props.theme.colors.text_fill__primary_button};
-        box-shadow: 8px 8px black;
+        box-shadow: 8px 8px ${(props) => props.theme.colors.box_shadow__primary_button};
 
-        font-size: 24pt;
-        font-weight: bold;
+        font-size: ${(props) => props.theme.font_sizes.primary_button};
+        font-weight: ${(props) => props.theme.font_weights.primary_button};
+        font-family: ${(props) => props.theme.font_families.primary_button};
 
         :hover {
-            box-shadow: 7px 7px black;
+            box-shadow: 7px 7px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(1px, 1px);
             transition: all 50ms;
         }
 
         :active {
-            box-shadow: 4px 4px black;
+            box-shadow: 4px 4px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(4px, 4px);
             transition: all 50ms;
         }
