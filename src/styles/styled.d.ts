@@ -38,6 +38,7 @@ declare module "styled-components" {
         },
         font_sizes: {
             label: string,
+            bigger_label: string,
             title: string,
             sub_title: string,
             primary_button: string,

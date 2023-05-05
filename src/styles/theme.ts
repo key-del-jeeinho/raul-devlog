@@ -48,6 +48,7 @@ export const lightTheme: DefaultTheme = {
     },
     font_sizes: {
         label: "24pt",
+        bigger_label: "28pt",
         title: "96pt",
         sub_title: "24pt",
         primary_button: "24pt",
