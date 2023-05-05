@@ -5,7 +5,7 @@ interface LabelStyleProps {
     type: LabelType
 }
 
-const LabelStyle = styled.div<LabelStyleProps>`
+const LabelStyle = styled.span<LabelStyleProps>`
     user-select: none;
     display: inline-block;
     padding: 0px 10px 0px 10px;

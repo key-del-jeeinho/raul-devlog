@@ -8,7 +8,7 @@ interface NodeProps {
     needFixed: boolean
 }
 
-const DraggableNode = styled.div<NodeProps>`
+const DraggableNode = styled.span<NodeProps>`
 	display: inline-block;
     
     position: absolute;

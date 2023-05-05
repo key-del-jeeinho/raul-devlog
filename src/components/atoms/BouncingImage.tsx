@@ -6,7 +6,7 @@ interface BouncableImageProps {
   isAnimating: boolean
 }
 
-const BouncableImage = styled.div<BouncableImageProps>`
+const BouncableImage = styled.span<BouncableImageProps>`
   &.animate > *{
     transform: scale(1.05);
     transition: transform 0.1s;
