@@ -3,49 +3,49 @@ import LabelStyle, { getRandomLabelStyle } from "../../interfaces/LabelStyle"
 import LabelSize from "../../interfaces/LabelSize"
 
 interface LabelWapperStyleProps {
-    size: LabelSize
+    labelSize: LabelSize
 }
 
 const LabelWapperStyle = styled.span<LabelWapperStyleProps>`
-    font-size: ${(props) => { switch(props.size) {
+    font-size: ${(props) => { switch(props.labelSize) {
         case 'regular': return props.theme.font_sizes.label
         case 'bigger': return props.theme.font_sizes.bigger_label
     }}};
 `
 
 interface LabelStyleProps {
-    style: LabelStyle,
-    size: LabelSize,
+    labelStyle: LabelStyle,
+    labelSize: LabelSize,
 }
 
-const LabelStyle = styled.span<LabelStyleProps>`
+const LabelDesign = styled.span<LabelStyleProps>`
     user-select: none;
     padding: 0px 10px 0px 10px;
-    ${(props) => {switch(props.style) {
+    ${(props) => {switch(props.labelStyle) {
         case 'texture': return 'background-image: url(' + props.theme.textures.box_texture__label_texture + ');'
     }}};
-    border: 1px solid ${(props) => {switch(props.style) {
+    border: 1px solid ${(props) => {switch(props.labelStyle) {
         case 'colored': return props.theme.colors.box_outline__label_colored
         case 'frame': return props.theme.colors.box_outline__label_frame
         case 'texture': return props.theme.colors.box_outline__label_texture
         case 'monotone': return props.theme.colors.box_outline__label_monotone
     }}};;
-    background-color: ${(props) => {switch(props.style) {
+    background-color: ${(props) => {switch(props.labelStyle) {
         case 'colored': return props.theme.colors.box_fill__label_colored
         case 'frame': return props.theme.colors.box_fill__label_frame
         case 'monotone': return props.theme.colors.box_fill__label_monotone
     }}};
-    color: ${(props) => {switch(props.style) {
+    color: ${(props) => {switch(props.labelStyle) {
         case 'colored': return props.theme.colors.text_fill__label_colored
         case 'frame': return props.theme.colors.text_fill__label_frame
         case 'texture': return props.theme.colors.text_fill__label_texture
         case 'monotone': return props.theme.colors.text_fill__label_monotone
     }}};
-    ${(props) => {switch(props.style) {
+    ${(props) => {switch(props.labelStyle) {
         case 'frame': return '-webkit-text-stroke: 1px ' + props.theme.colors.text_outline__label_frame
     }}};
     font-weight: ${(props) => props.theme.font_weights.label};
-    font-size: ${(props) => { switch(props.size) {
+    font-size: ${(props) => { switch(props.labelSize) {
         case 'regular': return props.theme.font_sizes.label
         case 'bigger': return props.theme.font_sizes.bigger_label
     }}};
@@ -53,11 +53,11 @@ const LabelStyle = styled.span<LabelStyleProps>`
 
 interface Props {
     children: string,
-    style: LabelStyle,
-    size: LabelSize,
+    labelStyle: LabelStyle,
+    labelSize: LabelSize,
 }
 
-export default function Label({children, style, size}: Props) {
-    const calculatedStyle = style == 'random' ? getRandomLabelStyle() : style
-    return (<LabelWapperStyle size={size}><LabelStyle style={calculatedStyle} size={size}>{children}</LabelStyle></LabelWapperStyle>)
+export default function Label({children, labelStyle, labelSize}: Props) {
+    const calculatedStyle = labelStyle == 'random' ? getRandomLabelStyle() : labelStyle
+    return (<LabelWapperStyle labelSize={labelSize}><LabelDesign labelStyle={calculatedStyle} labelSize={labelSize}>{children}</LabelDesign></LabelWapperStyle>)
 }

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import LabelSize from "../../interfaces/LabelSize";
-import LabelStyle from "../../interfaces/LabelStyle";
+import LabelStyle, { getRandomLabelStyle } from "../../interfaces/LabelStyle";
 import Label from "../atoms/Label";
 import styled from "styled-components";
-import useMouseDown from "@/hooks/useMouseDown";
+import useMouseDown from "../../hooks/useMouseDown";
 
 interface BouncingLabelStyleProps {
     sizeRatio: number
@@ -26,6 +26,8 @@ export default function BouncingLabel({children, style, size}: Props) {
     const [isMouseDown] = useMouseDown()
     const [isMouseDownInElement, setMouseDownInElement] = useState(false);
     const [isMouseEnter, setMouseEnter] = useState(false)
+
+    const labelStyle = useMemo(() => style == "random" ? getRandomLabelStyle() : style, [style])
     
     useEffect(() => {
         if(!isMouseDown) setMouseDownInElement(false)
@@ -43,8 +45,8 @@ export default function BouncingLabel({children, style, size}: Props) {
         sizeRatio={sizeRatio??1}
     >
         <Label 
-            style={style}
-            size={size}
+            labelStyle={labelStyle}
+            labelSize={size}
         >{children}</Label>
     </BouncingLabelStyle>)
 }
