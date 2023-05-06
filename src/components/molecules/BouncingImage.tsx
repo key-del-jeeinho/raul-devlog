@@ -53,8 +53,8 @@ export default function BouncingImage({src, alt, width, height, fadeIn} : Props)
       ><Image 
         src={src}
         alt={alt}
-        width={width??undefined}
-        height={height??undefined}
+        width={width}
+        height={height}
         draggable={false}
       /></BouncableImageStyle>
     )
