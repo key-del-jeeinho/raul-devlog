@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image"
-import BouncingImage from "../atoms/BouncingImage"
+import BouncingImage from "./BouncingImage"
 import DraggableComponent from "./DraggableComponent"
 
 interface Props {

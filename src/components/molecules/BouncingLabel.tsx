@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import LabelSize from "../../interfaces/LabelSize";
 import LabelStyle from "../../interfaces/LabelStyle";
-import Label from "./Label";
+import Label from "../atoms/Label";
 import styled from "styled-components";
 import useMouseDown from "@/hooks/useMouseDown";
 

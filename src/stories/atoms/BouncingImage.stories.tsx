@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import image001 from '../../../public/images/img_plant-001.png'
-import BouncingImage from '../../components/atoms/BouncingImage'
+import BouncingImage from '../../components/molecules/BouncingImage'
 
 const meta: Meta<typeof BouncingImage> = {
     title: 'BouncingImage',

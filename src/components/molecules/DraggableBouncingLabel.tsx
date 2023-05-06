@@ -1,7 +1,7 @@
 import LabelStyle from "@/interfaces/LabelStyle";
 import DraggableComponent from "./DraggableComponent";
 import Label from "../atoms/Label";
-import BouncingLabel from "../atoms/BouncingLabel";
+import BouncingLabel from "./BouncingLabel";
 import LabelSize from "@/interfaces/LabelSize";
 
 interface Props {
