@@ -45,7 +45,7 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
 `
 
 interface Props {
-    children: string,
+    children: React.ReactNode,
     visibleOverflowedShadow?: boolean,
     fadeIn?: boolean
     onClick: () => void

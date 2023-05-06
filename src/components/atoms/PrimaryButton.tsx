@@ -37,7 +37,7 @@ const PrimaryButtonStyle = styled.span<PrimaryButtonStyleProps>`
 `
 
 interface Props {
-    children: string,
+    children: React.ReactNode,
     fadeIn?: boolean,
     onClick: () => void
 }
