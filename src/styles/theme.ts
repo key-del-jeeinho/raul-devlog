@@ -12,6 +12,7 @@ const white = "#FFFFFF"
 export const lightTheme: DefaultTheme = {
     colors: {
         text_fill__title: black,
+
         text_fill__sub_title: black,
 
         text_fill__primary_button: white,
