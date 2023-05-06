@@ -7,13 +7,14 @@ interface Props {
     src: string | StaticImageData,
     alt: string,
     width?: number,
-    height?: number
+    height?: number,
+    fadeIn?: boolean
 }
 
-export default function DraggableBouncingImage({src, alt, isFixed, width, height}: Props) {
+export default function DraggableBouncingImage({src, alt, isFixed, width, height, fadeIn}: Props) {
     return (
         <DraggableComponent isFixed={isFixed}>
-            <BouncingImage src={src} alt={alt} width={width} height={height}/>
+            <BouncingImage src={src} alt={alt} width={width} height={height} fadeIn={fadeIn}/>
         </DraggableComponent>
     )
 }

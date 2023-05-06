@@ -4,13 +4,20 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import useMouseDown from "../../hooks/useMouseDown";
 
 interface BouncableImageStyleProps {
-  sizeRatio: number
+  sizeRatio: number,
+  fadeIn: boolean
 }
 
 const BouncableImageStyle = styled.span<BouncableImageStyleProps>`
   > *{
     transform: scale(${(props) => props.sizeRatio});
     transition: transform 500ms;
+    ${(props) => props.fadeIn ? "animation: fadein 500ms;" : ""}
+
+    @keyframes fadein {
+        from { transform: scale(0.5); }
+        to { transform: scale(1); }
+    }
   }
 `
 
@@ -18,10 +25,11 @@ interface Props {
   src: string | StaticImageData,
   alt: string,
   width?: number,
-  height?: number
+  height?: number,
+  fadeIn?: boolean
 }
 
-export default function BouncingImage(props : Props) {
+export default function BouncingImage({src, alt, width, height, fadeIn} : Props) {
     const [isMouseDown] = useMouseDown()
     const [isMouseDownInElement, setMouseDownInElement] = useState(false);
     const [isMouseEnter, setMouseEnter] = useState(false)
@@ -41,11 +49,12 @@ export default function BouncingImage(props : Props) {
         onMouseEnter={() => setMouseEnter(true)}
         onMouseLeave={() => setMouseEnter(false)}
         onMouseDown={() => setMouseDownInElement(true)}
+        fadeIn={fadeIn??false}
       ><Image 
-        src={props.src}
-        alt={props.alt}
-        width={props.width??undefined}
-        height={props.height??undefined}
+        src={src}
+        alt={alt}
+        width={width??undefined}
+        height={height??undefined}
         draggable={false}
       /></BouncableImageStyle>
     )
