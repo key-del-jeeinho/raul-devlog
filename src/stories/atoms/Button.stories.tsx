@@ -13,6 +13,7 @@ export const Default: Story = {
     args: {
         children: "click_me",
         visibleOverflowedShadow: true,
+        fadeIn: true,
         onClick: () => console.log("clicked!")
     }
 }

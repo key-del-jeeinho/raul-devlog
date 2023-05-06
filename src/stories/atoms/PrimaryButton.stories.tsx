@@ -12,6 +12,7 @@ type Story = StoryObj<typeof PrimaryButton>
 export const Button: Story = {
     args: {
         children: "Click Me!",
+        fadeIn: true,
         onClick: () => console.log("primary button clicked!")
     },
 }

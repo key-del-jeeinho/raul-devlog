@@ -1,7 +1,12 @@
 import styled from "styled-components"
 
-const PrimaryButtonStyle = styled.span`
+interface PrimaryButtonStyleProps {
+    fadeIn: boolean,
+}
+
+const PrimaryButtonStyle = styled.span<PrimaryButtonStyleProps>`
     button {
+        ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
         appearance: none;
         border-style: none;
 
@@ -20,24 +25,25 @@ const PrimaryButtonStyle = styled.span`
         :hover {
             box-shadow: 7px 7px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(1px, 1px);
-            transition: all 50ms;
+            transition: all 300ms;
         }
 
         :active {
             box-shadow: 4px 4px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(4px, 4px);
-            transition: all 50ms;
+            transition: all 100ms;
         }
     }
 `
 
 interface Props {
     children: string,
+    fadeIn?: boolean,
     onClick: () => void
 }
 
-export default function PrimaryButton({children, onClick}: Props) {
-    return (<PrimaryButtonStyle>
+export default function PrimaryButton({children, fadeIn, onClick}: Props) {
+    return (<PrimaryButtonStyle fadeIn={fadeIn??false}>
         <button onClick={onClick}>{children}</button>
     </PrimaryButtonStyle>)
 }

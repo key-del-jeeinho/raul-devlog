@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 interface ButtonStyleProps {
-    visibleOverflowedShadow: boolean
+    visibleOverflowedShadow: boolean,
+    fadeIn: boolean,
 }
 
 const ButtonStyle = styled.span<ButtonStyleProps>`
     position: relative;
     button {
+        ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
         margin: ${(props) => props.visibleOverflowedShadow 
             ? "0px 4px 4px 0px" 
             : "0px 0px 0px 0px"
@@ -31,25 +33,26 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
         :hover {
             box-shadow: 3px 3px ${(props) => props.theme.colors.box_shadow__button};
             transform: translate(1px, 1px);
-            transition: all 50ms;
+            transition: all 300ms;
         }
 
         :active {
             box-shadow: 2px 2px ${(props) => props.theme.colors.box_shadow__button};
             transform: translate(2px, 2px);
-            transition: all 50ms;
+            transition: all 100ms;
         }
     }
 `
 
 interface Props {
     children: string,
-    visibleOverflowedShadow?: boolean
+    visibleOverflowedShadow?: boolean,
+    fadeIn?: boolean
     onClick: () => void
 }
 
-export default function Button({children, visibleOverflowedShadow, onClick}: Props) {
-    return (<ButtonStyle visibleOverflowedShadow={visibleOverflowedShadow??false}>
+export default function Button({children, visibleOverflowedShadow, fadeIn, onClick}: Props) {
+    return (<ButtonStyle visibleOverflowedShadow={visibleOverflowedShadow??false} fadeIn={fadeIn??false}>
         <button onClick={onClick}>{children}</button>
     </ButtonStyle>)
 }
