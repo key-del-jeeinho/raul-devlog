@@ -32,7 +32,7 @@ export default function BouncingLabel({children, style, size}: Props) {
       }, [isMouseDown])
 
       const sizeRatio = useMemo(() => {
-        if(isMouseDownInElement) return 1.05
+        if(isMouseDownInElement) return 1.1
         else if(isMouseEnter) return 0.95
       }, [isMouseDownInElement, isMouseEnter])
 
