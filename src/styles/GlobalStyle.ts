@@ -10,7 +10,8 @@ ${reset}
 }
 
 html,body {
-    max-width: 100vw;
+    height: 100vh;
+    width: 100vw;
     min-width: 1200px;
     overflow-x: hidden;
 }
