@@ -51,6 +51,7 @@ declare module "styled-components" {
             button: string,
         },
         textures: {
+            background: string,
             box_texture__label_texture: string,
         },
     }

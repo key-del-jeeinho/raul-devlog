@@ -1,5 +1,6 @@
 import { DefaultTheme } from "styled-components";
 import paper002 from '../../public/images/img_paper-002.png'
+import background001 from '../../public/images/img_background-light.png'
 
 const primary = "#1B5E20"
 const primary_light = "#206D1F"
@@ -62,6 +63,7 @@ export const lightTheme: DefaultTheme = {
         button: "Pretendard",
     },
     textures: {
+        background: background001.src,
         box_texture__label_texture: paper002.src,
     },
 }
