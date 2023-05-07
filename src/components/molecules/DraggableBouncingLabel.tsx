@@ -1,6 +1,5 @@
 import LabelStyle from "@/interfaces/LabelStyle";
 import DraggableComponent from "./DraggableComponent";
-import Label from "../atoms/Label";
 import BouncingLabel from "./BouncingLabel";
 import LabelSize from "@/interfaces/LabelSize";
 

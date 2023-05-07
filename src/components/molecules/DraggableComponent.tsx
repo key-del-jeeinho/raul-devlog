@@ -8,8 +8,7 @@ interface NodeProps {
     needFixed: boolean
 }
 
-const DraggableNode = styled.span<NodeProps>`
-    position: absolute;
+const DraggableNode = styled.div<NodeProps>`
     transition: ${props => props.needFixed ? `transform 0.3s` : `transform 0.1s`};
 `
 
@@ -33,5 +32,5 @@ export default function DraggableComponent({ children, isFixed }: Props) {
                 {children}
             </DraggableNode>
         </Draggable>
-    )//
+    )
 }
