@@ -27,7 +27,8 @@ export default function BouncingLabel({children, style, size}: Props) {
     const [isMouseDownInElement, setMouseDownInElement] = useState(false);
     const [isMouseEnter, setMouseEnter] = useState(false)
 
-    const labelStyle = useMemo(() => style == "random" ? getRandomLabelStyle() : style, [style])
+    if(style == 'random') throw Error("현재 random label은 사용할 수 없습니다! (styled-component 오류)")
+    const labelStyle = useMemo(() => /*style == "random" ? getRandomLabelStyle() : */style, [style])
     
     useEffect(() => {
         if(!isMouseDown) setMouseDownInElement(false)

@@ -58,6 +58,7 @@ interface Props {
 }
 
 export default function Label({children, labelStyle, labelSize}: Props) {
-    const calculatedStyle = labelStyle == 'random' ? getRandomLabelStyle() : labelStyle
+    if(labelStyle == 'random') throw Error("현재 random label은 사용할 수 없습니다! (styled-component 오류)")
+    const calculatedStyle = /*labelStyle == 'random' ? getRandomLabelStyle() : */labelStyle
     return (<LabelWapperStyle labelSize={labelSize}><LabelDesign labelStyle={calculatedStyle} labelSize={labelSize}>{children}</LabelDesign></LabelWapperStyle>)
 }
