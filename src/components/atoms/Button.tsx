@@ -1,18 +1,25 @@
 import styled from "styled-components"
 
 interface ButtonStyleProps {
-    visibleOverflowedShadow: boolean,
     fadeIn: boolean,
 }
+
+interface Button3DStyleProps {
+    marginOverflowedShadow: boolean,
+}
+
+const Button3DStyle = styled.div<Button3DStyleProps>`
+    display: inline-block;
+    padding: ${(props) => props.marginOverflowedShadow 
+        ? "0px 4px 4px 0px" 
+        : "0px 0px 0px 0px"
+    };
+`
 
 const ButtonStyle = styled.span<ButtonStyleProps>`
     position: relative;
     button {
         ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
-        margin: ${(props) => props.visibleOverflowedShadow 
-            ? "0px 4px 4px 0px" 
-            : "0px 0px 0px 0px"
-        };
         appearance: none;
         border-style: none;
         padding: 10px 10px 10px 10px;
@@ -46,13 +53,15 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
 
 interface Props {
     children: React.ReactNode,
-    visibleOverflowedShadow?: boolean,
+    marginOverflowedShadow?: boolean,
     fadeIn?: boolean
     onClick: () => void
 }
 
-export default function Button({children, visibleOverflowedShadow, fadeIn, onClick}: Props) {
-    return (<ButtonStyle visibleOverflowedShadow={visibleOverflowedShadow??false} fadeIn={fadeIn??false}>
-        <button onClick={onClick}>{children}</button>
-    </ButtonStyle>)
+export default function Button({children, marginOverflowedShadow, fadeIn, onClick}: Props) {
+    return (<Button3DStyle marginOverflowedShadow={marginOverflowedShadow??false}>
+        <ButtonStyle fadeIn={fadeIn??false}>
+            <button onClick={onClick}>{children}</button>
+        </ButtonStyle>
+    </Button3DStyle>)
 }
