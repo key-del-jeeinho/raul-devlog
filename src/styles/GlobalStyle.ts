@@ -9,6 +9,10 @@ ${reset}
     margin: 0;
 }
 
+html {
+    font-size: 10pt;
+}
+
 html,body {
     height: 100vh;
     width: 100vw;

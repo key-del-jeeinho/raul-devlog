@@ -48,12 +48,12 @@ export const lightTheme: DefaultTheme = {
         button: "bold",
     },
     font_sizes: {
-        label: "24pt",
-        bigger_label: "28pt",
-        title: "96pt",
-        sub_title: "24pt",
-        primary_button: "24pt",
-        button: "16pt",
+        label: "2.4rem",
+        bigger_label: "2.8rem",
+        title: "9.6rem",
+        sub_title: "2.4rem",
+        primary_button: "2.4rem",
+        button: "1.6rem",
     },
     font_families: {
         title: "PyeongChang",
