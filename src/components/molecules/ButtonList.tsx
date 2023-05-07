@@ -1,59 +1,59 @@
-import Image, { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import { Children, ReactNode, useContext } from "react";
 import Button from "../atoms/Button";
+import { createContext } from "react";
 
-type Content = {
-    type: 'image',
-    image: StaticImageData | string,
-    alt: string,
-    width?: number,
-    height?: number,
-    key: string,
-    onClick: () => void,
-} | {
-    type: 'text',
-    text: string,
-    key: string,
-    onClick: () => void,
+type ButtonListContextProp = {
+    fadeIn: boolean,
+    isLast: boolean,
 }
+const ButtonContext = createContext<ButtonListContextProp | null>(null)
 
 interface Props {
-    contents: Content[],
+    children: ReactNode,
     fadeIn: boolean,
 }
 
-export default function ButtonList({ contents, fadeIn }: Props) {
-    const children = contents.map((content, idx) => {
-        const isLast = idx == contents.length - 1
-        const children = getChildren(content)
-        const { onClick, key } = content
-
-        return (<div key={key}>
-            <Button 
-                visibleOverflowedShadow={isLast}
-                fadeIn={fadeIn}
-                onClick={onClick}
-            >{children}</Button>
-        </div>)
-    })
-    return (<div>{children}</div>)
+export default function ButtonList({ children, fadeIn }: Props) {
+    const elements = Children.toArray(children)
+    const buttons = Children.toArray(
+        elements.map((element, index) =>
+            getButton(element, fadeIn, index, elements.length)
+    ))
+    return (<div>{buttons}</div>)
 }
 
-function getChildren(content: Content): ReactNode {
-    switch(content.type) {
-        case "image": {
-            const {image, alt, width, height} = content
-            return (<Image
-                src={image}
-                alt={alt}
-                width={width}
-                height={height}
-                draggable={false}
-            />)
-        }
-        case "text": {
-            const {text} = content
-            return text
-        }
-    }
+function getButton(
+    element: ReactNode,
+    fadeIn: boolean,
+    index: number,
+    length: number
+): ReactNode {
+    const isLast = length == index + 1
+    console.log(length + ", " + index + ", " + isLast)
+    const providerValue: ButtonListContextProp = { fadeIn, isLast }
+    return (<ButtonContext.Provider value={providerValue}>
+        {element}
+    </ButtonContext.Provider>)
+}
+
+interface ButtonProps {
+    children: ReactNode,
+    onClick: () => void,
+}
+
+ButtonList.Button = function ButtonListButton ({ 
+    children,
+    onClick,
+}: ButtonProps) {
+    const context = useContext(ButtonContext)
+    if(context == null) return null
+    
+    const { fadeIn, isLast } = context
+    return (<div>
+        <Button 
+            marginOverflowedShadow={isLast}
+            fadeIn={fadeIn}
+            onClick={onClick}
+        >{children}</Button>
+    </div>)
 }
