@@ -22,7 +22,7 @@ const LabelDesign = styled.span<LabelStyleProps>`
     user-select: none;
     padding: 0px 10px 0px 10px;
     ${(props) => {switch(props.labelStyle) {
-        case 'texture': return 'background-image: url(' + props.theme.textures.box_texture__label_texture + ');'
+        case 'texture': return 'background-image: url(' + props.theme.images.box_texture__label + ');'
     }}};
     border: 1px solid ${(props) => {switch(props.labelStyle) {
         case 'colored': return props.theme.colors.box_outline__label_colored

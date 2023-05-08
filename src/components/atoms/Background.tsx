@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 
 const BackgroundStyle = styled.div`
-    background-image: url(${({theme}) => theme.textures.background});
+    background-image: url(${({theme}) => theme.images.box_texture__page});
     width: 100vw;
     height: 100vh;
 `

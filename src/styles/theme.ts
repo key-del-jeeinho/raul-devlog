@@ -1,6 +1,8 @@
 import { DefaultTheme } from "styled-components";
+import texture001 from '../../public/images/img_texture-001.png'
+import texture002 from '../../public/images/img_texture-002.png'
+import flower001 from '../../public/images/img_flower-001.png'
 import paper002 from '../../public/images/img_paper-002.png'
-import background001 from '../../public/images/img_background-light.png'
 
 const primary = "#1B5E20"
 const primary_light = "#206D1F"
@@ -62,9 +64,11 @@ export const lightTheme: DefaultTheme = {
         primary_button: "Pretendard",
         button: "Pretendard",
     },
-    textures: {
-        background: background001.src,
-        box_texture__label_texture: paper002.src,
+    images: {
+        box_texture__page: texture001.src,
+        box_texture__side_bar: texture002.src,
+        box_texture__label: paper002.src,
+        box_content__dark_mode_button: flower001.src
     },
 }
 export const defaultTheme: DefaultTheme = lightTheme

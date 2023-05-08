@@ -50,9 +50,11 @@ declare module "styled-components" {
             primary_button: string,
             button: string,
         },
-        textures: {
-            background: string,
-            box_texture__label_texture: string,
+        images: {
+            box_texture__page: string,
+            box_texture__side_bar: string,
+            box_texture__label: string,
+            box_content__dark_mode_button: string,
         },
     }
 }
