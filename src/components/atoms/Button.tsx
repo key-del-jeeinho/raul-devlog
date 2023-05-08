@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 interface ButtonStyleProps {
+    width?: string,
     fadeIn: boolean,
 }
 
@@ -19,6 +20,7 @@ const Button3DStyle = styled.div<Button3DStyleProps>`
 const ButtonStyle = styled.span<ButtonStyleProps>`
     position: relative;
     button {
+        ${(props) => props.width != undefined ? `width: ${props.width};` : ""}
         ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
         appearance: none;
         border-style: none;
@@ -53,14 +55,15 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
 
 interface Props {
     children: React.ReactNode,
+    width?: string,
     marginOverflowedShadow?: boolean,
     fadeIn?: boolean
     onClick: () => void
 }
 
-export default function Button({children, marginOverflowedShadow, fadeIn, onClick}: Props) {
+export default function Button({children, width, marginOverflowedShadow, fadeIn, onClick}: Props) {
     return (<Button3DStyle marginOverflowedShadow={marginOverflowedShadow??false}>
-        <ButtonStyle fadeIn={fadeIn??false}>
+        <ButtonStyle fadeIn={fadeIn??false} width={width}>
             <button onClick={onClick}>{children}</button>
         </ButtonStyle>
     </Button3DStyle>)

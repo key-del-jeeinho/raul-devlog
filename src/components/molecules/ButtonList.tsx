@@ -5,19 +5,21 @@ import { createContext } from "react";
 type ButtonListContextProp = {
     fadeIn: boolean,
     isLast: boolean,
+    width?: string,
 }
 const ButtonContext = createContext<ButtonListContextProp | null>(null)
 
 interface Props {
     children: ReactNode,
+    width?: string,
     fadeIn: boolean,
 }
 
-export default function ButtonList({ children, fadeIn }: Props) {
+export default function ButtonList({ children, width, fadeIn }: Props) {
     const elements = Children.toArray(children)
     const buttons = Children.toArray(
         elements.map((element, index) =>
-            getButton(element, fadeIn, index, elements.length)
+            getButton(element, fadeIn, index, elements.length, width)
     ))
     return (<div>{buttons}</div>)
 }
@@ -26,11 +28,11 @@ function getButton(
     element: ReactNode,
     fadeIn: boolean,
     index: number,
-    length: number
+    length: number,
+    width?: string,
 ): ReactNode {
     const isLast = length == index + 1
-    console.log(length + ", " + index + ", " + isLast)
-    const providerValue: ButtonListContextProp = { fadeIn, isLast }
+    const providerValue: ButtonListContextProp = { fadeIn, width, isLast }
     return (<ButtonContext.Provider value={providerValue}>
         {element}
     </ButtonContext.Provider>)
@@ -48,10 +50,11 @@ ButtonList.Button = function ButtonListButton ({
     const context = useContext(ButtonContext)
     if(context == null) return null
     
-    const { fadeIn, isLast } = context
+    const { fadeIn, isLast, width } = context
     return (<div>
         <Button 
             marginOverflowedShadow={isLast}
+            width={width}
             fadeIn={fadeIn}
             onClick={onClick}
         >{children}</Button>

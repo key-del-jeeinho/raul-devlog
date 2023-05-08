@@ -16,6 +16,8 @@ import CircularText from '@/components/atoms/CircularText'
 import ButtonList from '@/components/molecules/ButtonList'
 import Draggable from 'react-draggable'
 import Image from 'next/image'
+import Background from '../components/atoms/Background'
+import SideBar from '../components/organisms/SideBar'
 
 export default function Home() {
   return (
@@ -44,21 +46,24 @@ export default function Home() {
       <Icon type='ic32_menu' color='#000000' />
       <a href='#logo-clicked' draggable={false}><Logo/></a>
       <div></div> */}
-      <ButtonList 
-        fadeIn={true}
-      >
-        <ButtonList.Button
-          onClick= {() => console.log("clicked 'sad'")}
-        >안녕하세요</ButtonList.Button>
-        <ButtonList.Button
-          onClick= {() => console.log("clicked 'sad'")}
-        >저는 저 나무에요</ButtonList.Button>
-        <ButtonList.Button
-          onClick= {() => console.log("clicked 'sad'")}
-        >삥슝빵상뿡숭</ButtonList.Button>
-      </ButtonList>
-      <BouncingLabel style='random' size='regular'>Blog</BouncingLabel>
-      하늘과 산의 푸름은 바다를 닮았으나
+      <Background>
+        <SideBar/>
+        {/* <ButtonList fadeIn={true}>
+          <ButtonList.Button onClick= {() => console.log("clicked '1'")}>
+            Lorem
+          </ButtonList.Button>
+          <ButtonList.Button onClick= {() => console.log("clicked '2'")}>
+            Ipsum
+          </ButtonList.Button>
+          <ButtonList.Button onClick= {() => console.log("clicked '3'")}>
+            Dolor
+          </ButtonList.Button>
+        </ButtonList> */}
+        <div style={{padding: '10px 0px 10px 0px'}}>
+        하늘과 산의 푸름은 바다를 닮았으나
+        </div>
+        <BouncingLabel style='texture' size='regular'>Lorem</BouncingLabel>
+      </Background>
 
       {/* <div>
         <CircularText 
