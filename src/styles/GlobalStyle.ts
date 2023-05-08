@@ -10,7 +10,7 @@ ${reset}
 }
 
 html {
-    font-size: 10pt;
+    font-size: 10px;
 }
 
 html,body {
