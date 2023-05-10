@@ -50,6 +50,12 @@ declare module "styled-components" {
             primary_button: string,
             button: string,
         },
+        box_sizes: {
+            fixed_button__width: string,
+            fixed_button__height: string,
+            fixed_primary__button_width: string,
+            fixed_primary__button_height: string,
+        },
         images: {
             box_texture__page: string,
             box_texture__side_bar: string,

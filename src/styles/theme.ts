@@ -64,6 +64,12 @@ export const lightTheme: DefaultTheme = {
         primary_button: "Pretendard",
         button: "Pretendard",
     },
+    box_sizes: {
+        fixed_button__width: "10rem",
+        fixed_button__height: "4rem",
+        fixed_primary__button_width: "15rem",
+        fixed_primary__button_height: "6rem",
+    },
     images: {
         box_texture__page: texture001.src,
         box_texture__side_bar: texture002.src,
