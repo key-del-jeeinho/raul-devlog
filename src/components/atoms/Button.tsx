@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 interface ButtonStyleProps {
-    width?: string,
     fadeIn: boolean,
+    fixed: boolean,
 }
 
 interface Button3DStyleProps {
@@ -20,11 +20,14 @@ const Button3DStyle = styled.div<Button3DStyleProps>`
 const ButtonStyle = styled.span<ButtonStyleProps>`
     position: relative;
     button {
-        ${(props) => props.width != undefined ? `width: ${props.width};` : ""}
+        white-space: nowrap;
+        ${({theme, fixed}) => fixed ? `width: ${theme.box_sizes.fixed_button__width}` : "width: 100%"};
+        ${({theme, fixed}) => fixed ? `height: ${theme.box_sizes.fixed_button__height}` : ""};
+        ${({fixed}) => fixed ? "" : "padding: 10px 10px 10px 10px"};
+        
         ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
         appearance: none;
         border-style: none;
-        padding: 10px 10px 10px 10px;
 
         border-radius: 50vh;
         border-color: ${(props) => props.theme.colors.box_outline__button};
@@ -55,15 +58,15 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
 
 interface Props {
     children: React.ReactNode,
-    width?: string,
+    fixed: boolean,
     marginOverflowedShadow?: boolean,
     fadeIn?: boolean
     onClick: () => void
 }
 
-export default function Button({children, width, marginOverflowedShadow, fadeIn, onClick}: Props) {
+export default function Button({children, fixed, marginOverflowedShadow, fadeIn, onClick}: Props) {
     return (<Button3DStyle marginOverflowedShadow={marginOverflowedShadow??false}>
-        <ButtonStyle fadeIn={fadeIn??false} width={width}>
+        <ButtonStyle fadeIn={fadeIn??false} fixed={fixed}>
             <button onClick={onClick}>{children}</button>
         </ButtonStyle>
     </Button3DStyle>)

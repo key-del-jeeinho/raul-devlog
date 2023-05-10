@@ -14,6 +14,7 @@ export const Default: Story = {
         children: "click_me",
         marginOverflowedShadow: true,
         fadeIn: true,
+        fixed: false,
         onClick: () => console.log("clicked!")
     }
 }
