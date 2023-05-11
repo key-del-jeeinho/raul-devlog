@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 const BackgroundStyle = styled.div`
     background-image: url(${({theme}) => theme.images.box_texture__page});
-    width: 100vw;
-    height: 100vh;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
 `
 
 interface Props {
