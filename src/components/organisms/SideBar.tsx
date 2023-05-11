@@ -30,7 +30,7 @@ export default function SideBar({}: Props) {
   const data = {
     subscribe: { content: "구독하기", onClick: () => {router.push('/subscribe')} },
     guestBook: { content: "방명록 작성", onClick: () => {router.push('/guest-book')}},
-    theme: { content: <Image src={flower_001} alt="테마 토글(다크모드로)" height={17}/>, onClick: toggleTheme },
+    theme: { content: <Image src={flower_001} alt="테마 토글(다크모드로)" height={25}/>, onClick: toggleTheme },
   }
   return (<>
       <SidbarBox>
@@ -46,7 +46,9 @@ export default function SideBar({}: Props) {
             <ButtonList.Button onClick= {data.guestBook.onClick}>
               {data.guestBook.content}
             </ButtonList.Button>
-            <ButtonList.ThemeButton/>
+            <ButtonList.Button onClick= {data.theme.onClick}>
+              {data.theme.content}
+            </ButtonList.Button>
             <div style={{paddingTop: '30px'}}/>
           </ButtonList>
         </div>

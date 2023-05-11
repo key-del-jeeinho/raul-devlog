@@ -1,7 +1,6 @@
 import { Children, ReactNode, useContext } from "react";
 import Button from "../atoms/Button";
 import { createContext } from "react";
-import ThemeButton from "../atoms/ThemeButton";
 
 type ButtonListContextProp = {
     fadeIn: boolean,
@@ -63,18 +62,4 @@ ButtonList.Button = function ButtonListButton ({
 }
 
 interface ThemeButtonProps {
-}
-
-ButtonList.ThemeButton = function ButtonListThemeButton ({ 
-}: ThemeButtonProps) {
-    const context = useContext(ButtonContext)
-    if(context == null) return null
-    
-    const { fadeIn, isLast, fixed } = context
-    return (<div>
-        <ThemeButton 
-            marginOverflowedShadow={isLast}
-            fadeIn={fadeIn}
-        />
-    </div>)
 }
