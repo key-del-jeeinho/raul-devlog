@@ -3,6 +3,13 @@ import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
+a { 
+    text-decoration:none;
+    color: inherit;
+    :hover { 
+        text-decoration:none
+    }
+}
 * {
     box-sizing: border-box;
     padding: 0;
