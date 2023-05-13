@@ -1,55 +1,54 @@
-HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING
-
-<svg width="420" height="420">
-  <rect x="0" y="0" width="420" height="840" fill="#000000"/>
-    <path id="path-out" d="
-            M 0,210
-            a 210,210 0 1,1 420,0
-            a 210,210 0 1,1 -420,0" 
-            stroke="blue" stroke-width="1" fill="none" />
-    <path id="path" d="
-            M 24,210
-            a 162,162 0 1,1 372,0
-            a 162,162 0 1,1 -372,0" 
-            stroke="red" stroke-width="1" fill="none" />
-    <text font-size="24pt" font-weight="bold">
-        <textPath  href="#path" fill="aliceblue">HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING</textPath>
-    </text>
-</svg>
-
-<svg width="420" height="420">
-  <rect x="0" y="0" width="840" height="840" fill="#000000"/>
-    <path id="path-out" d="
-            M 0,210
-            a 210,210 0 1,1 420,0
-            a 210,210 0 1,1 -420,0" 
-            stroke="blue" stroke-width="1" fill="none" />
-    <path id="path" d="
-            M 24,210
-            a 162,162 0 1,1 372,0
-            a 162,162 0 1,1 -372,0" 
-            stroke="red" stroke-width="3" fill="none" />
-    <text font-size="24pt" font-weight="bold">
-        <textPath  href="#path" fill="aliceblue">HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING</textPath>
-    </text>
-</svg>
-
-//unsupport type
-import ReactCurvedText from "react-curved-text";
-
-const MyComponent = () => {
+export default function Home() {
   return (
-    <ReactCurvedText
-      width={370}
-      height={300}
-      cx={190}
-      cy={120}
-      rx={100}
-      ry={100}
-      startOffset={100}
-      text="curved text"
-    />
-  );
-};
+    <>
+    <Background>
+      <NavBar />
+      <DraggableBouncingImage src={plant002} alt={'test'} width={300} isFixed={false} fadeIn={true}/>
+      <BouncingImage src={plant001} alt={'test'} width={300} fadeIn={true}/>
+      <DraggableBouncingImage src={plant003} alt={'test'} width={200} isFixed={true} fadeIn={true}/>
+      <Label labelStyle='colored' labelSize='regular'>Blog</Label>
+      <Label labelStyle='frame' labelSize='regular'>Blog</Label>
+      <BouncingLabel style='texture' size='regular'>Blog</BouncingLabel>
+      <DraggableBouncingLabel style='monotone' size='regular' isFixed={true}>Blog</DraggableBouncingLabel>
+      <DraggableBouncingLabel style='frame' size='regular' isFixed={false}>FREEDOM</DraggableBouncingLabel>
+      <Title>나무에 물 주듯</Title>
+      <SubTitle>Raul.devlog</SubTitle>
+      <PrimaryButton onClick={() => console.log("clicked!")} fadeIn={true}>Click Me!</PrimaryButton>
+      <div></div>
+      <Button onClick={() => console.log("clicked!")} fadeIn={true} fixed={false}>First Option</Button>
+      <div></div>
+      <Button onClick={() => console.log("clicked!")} fixed={false}>Second Option</Button>
+      <div></div>
+      <Button onClick={() => console.log("clicked!")} fixed={false} marginOverflowedShadow={true} fadeIn={true}>Third Option</Button>
+      <div></div>
+        <SideBar/>
+        <ButtonList fadeIn={true} fixed={true}>
+          <ButtonList.Button onClick= {() => console.log("clicked '1'")}>
+            Lorem
+          </ButtonList.Button>
+          <ButtonList.Button onClick= {() => console.log("clicked '2'")}>
+            Ipsum
+          </ButtonList.Button>
+          <ButtonList.Button onClick= {() => console.log("clicked '3'")}>
+            Dolor
+          </ButtonList.Button>
+        </ButtonList>
+        <div style={{padding: '10px 0px 10px 0px'}}>
+        하늘과 산의 푸름은 바다를 닮았으나
+        </div>
+        <BouncingLabel style='texture' size='regular'>Lorem</BouncingLabel>
 
-export default MyComponent;
+      <div>
+        <CircularText 
+          radius={210} 
+          text='HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING'
+          textBy='inside'
+          fontColor='#e0e0e0'
+          fontSize='32px'
+          fontWeight='bold'
+        />
+      </div>
+      </Background>
+    </>
+  )
+}
