@@ -1,33 +1,37 @@
+import Color from '../interfaces/Color'
 import "styled-components"
 
 declare module "styled-components" {
     export interface DefaultTheme {
         colors: {
-            text_fill__title: string,
-            text_fill__sub_title: string,
-            text_fill__primary_button: string,
-            text_fill__button: string,
-            text_fill__label_colored: string,
-            text_fill__label_texture: string,
-            text_fill__label_monotone: string,
-            text_fill__label_frame: string,
+            icon_fill__nav_bar: Color,
 
-            text_outline__label_frame: string,
+            text_fill__title: Color,
+            text_fill__sub_title: Color,
+            text_fill__nav_bar: Color,
+            text_fill__primary_button: Color,
+            text_fill__button: Color,
+            text_fill__label_colored: Color,
+            text_fill__label_texture: Color,
+            text_fill__label_monotone: Color,
+            text_fill__label_frame: Color,
 
-            box_outline__button: string,
-            box_outline__label_frame: string,
-            box_outline__label_colored: string,
-            box_outline__label_texture: string,
-            box_outline__label_monotone: string,
+            text_outline__label_frame: Color,
 
-            box_fill__primary_button: string,
-            box_fill__button: string,
-            box_fill__label_colored: string,
-            box_fill__label_frame: string,
-            box_fill__label_monotone: string,
+            box_outline__button: Color,
+            box_outline__label_frame: Color,
+            box_outline__label_colored: Color,
+            box_outline__label_texture: Color,
+            box_outline__label_monotone: Color,
 
-            box_shadow__primary_button: string,
-            box_shadow__button: string,
+            box_fill__primary_button: Color,
+            box_fill__button: Color,
+            box_fill__label_colored: Color,
+            box_fill__label_frame: Color,
+            box_fill__label_monotone: Color,
+
+            box_shadow__primary_button: Color,
+            box_shadow__button: Color,
         },
         font_weights: {
             label: string,
@@ -37,10 +41,11 @@ declare module "styled-components" {
             button: string,
         },
         font_sizes: {
-            label: string,
-            bigger_label: string,
             title: string,
             sub_title: string,
+            nav_bar: string,
+            label: string,
+            bigger_label: string,
             primary_button: string,
             button: string,
         },

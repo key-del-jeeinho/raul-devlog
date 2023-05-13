@@ -18,6 +18,9 @@ export const lightTheme: DefaultTheme = {
 
         text_fill__sub_title: black,
 
+        icon_fill__nav_bar: black,
+        text_fill__nav_bar: black,
+
         text_fill__primary_button: white,
         box_fill__primary_button: primary,
         box_shadow__primary_button: black,
@@ -51,10 +54,11 @@ export const lightTheme: DefaultTheme = {
         button: "bold",
     },
     font_sizes: {
-        label: "2.4rem",
-        bigger_label: "2.8rem",
         title: "9.6rem",
         sub_title: "2.4rem",
+        nav_bar: "2.4rem",
+        label: "2.4rem",
+        bigger_label: "2.8rem",
         primary_button: "2.4rem",
         button: "1.6rem",
     },
