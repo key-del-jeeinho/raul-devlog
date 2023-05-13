@@ -20,6 +20,8 @@ export const lightTheme: DefaultTheme = {
 
         icon_fill__nav_bar: black,
         text_fill__nav_bar: black,
+        box_fill__nav_bar: "rgba(255, 255, 255, 0.1)",
+        box_outline__nav_bar: "rgba(0, 0, 0, 0.1)",
 
         text_fill__primary_button: white,
         box_fill__primary_button: primary,
@@ -37,10 +39,10 @@ export const lightTheme: DefaultTheme = {
         box_fill__label_colored: white,
         box_outline__label_colored: black,
 
-        text_outline__label_frame: black,
-        box_outline__label_frame: black,
         box_fill__label_frame: white,
         text_fill__label_frame: white,
+        box_outline__label_frame: black,
+        text_outline__label_frame: black,
 
         box_outline__label_monotone: black,
         text_fill__label_monotone: white,
