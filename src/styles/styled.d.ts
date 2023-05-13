@@ -19,6 +19,7 @@ declare module "styled-components" {
             text_outline__label_frame: Color,
 
             box_outline__nav_bar: Color,
+            box_outline__side_bar: Color,
             box_outline__button: Color,
             box_outline__label_frame: Color,
             box_outline__label_colored: Color,

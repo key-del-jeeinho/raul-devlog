@@ -23,6 +23,8 @@ export const lightTheme: DefaultTheme = {
         box_fill__nav_bar: "rgba(255, 255, 255, 0.1)",
         box_outline__nav_bar: "rgba(0, 0, 0, 0.1)",
 
+        box_outline__side_bar: "rgba(255, 255, 255, 0.1)",
+
         text_fill__primary_button: white,
         box_fill__primary_button: primary,
         box_shadow__primary_button: black,
