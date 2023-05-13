@@ -12,6 +12,9 @@ const SidbarBox = styled.div`
     display: flex;
     column-gap: 10px;
     flex-direction: column-reverse;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
 
     > * {
         display: flex;

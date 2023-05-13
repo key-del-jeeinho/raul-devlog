@@ -20,6 +20,7 @@ const NavBarStyle = styled.div`
     width: 100vw;
     height: ${navBarHeightPx_110}px;
     background-color: ${({theme}) => theme.colors.box_fill__nav_bar};
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid ${({theme}) => theme.colors.box_outline__nav_bar};
 `
 
