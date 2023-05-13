@@ -5,6 +5,7 @@ const BackgroundStyle = styled.div`
     background-image: url(${({theme}) => theme.images.box_texture__page});
     background-repeat: repeat;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
 `
 
