@@ -12,16 +12,22 @@ type NavBarContextProp = {
 
 const NavBarContext = createContext<NavBarContextProp | null>(null)
 
-const navBarHeightPx_110 = 110
+const navBarHeightPx = 110
 const NavBarStyle = styled.div`
+    z-index: 1;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
-    height: ${navBarHeightPx_110}px;
+    height: ${navBarHeightPx}px;
     background-color: ${({theme}) => theme.colors.box_fill__nav_bar};
     backdrop-filter: blur(20px);
     border-bottom: 1px solid ${({theme}) => theme.colors.box_outline__nav_bar};
+`
+const NavBarSpaceStyle = styled.div`
+    width: 100vw;
+    height: ${navBarHeightPx}px;
 `
 
 interface Props {
@@ -32,6 +38,7 @@ export default function NavBar({}: Props) {
     const theme = useTheme()
     const iconColor = theme.colors.icon_fill__nav_bar
     return (
+        <>
         <NavBarStyle>
             <NavBar.Left>
                 <Link href="/"><NavBar.Logo/></Link>
@@ -42,6 +49,8 @@ export default function NavBar({}: Props) {
                 <NavBar.Attribute isLast={true}><Icon type='ic32_menu' color={iconColor} /></NavBar.Attribute>
             </NavBar.Right>
         </NavBarStyle>
+        <NavBarSpaceStyle/>
+        </>
     )
 }
 
@@ -61,7 +70,7 @@ const NavBarLeftStyle = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: ${navBarHeightPx_110 / 2}px;
+    padding-right: ${navBarHeightPx / 2}px;
 `
 
 NavBar.Left = function NavBarLeft({children}: NavBarComponentProps): JSX.Element {
@@ -78,7 +87,7 @@ const NavBarRightStyle = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: ${navBarHeightPx_110 / 2}px;
+    padding-right: ${navBarHeightPx / 2}px;
 `
 
 NavBar.Right = function NavBarRight({children}: NavBarComponentProps): JSX.Element {

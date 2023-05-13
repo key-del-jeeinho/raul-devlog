@@ -6,6 +6,7 @@ import Image from "next/image"
 import flower_001 from "../../../public/images/img_flower-001.png"
 
 const SidbarBox = styled.div`
+    z-index: 1;
     width: 70px;
     height: 400px;
     background-image: url(${({theme}) => theme.images.box_texture__side_bar});
@@ -13,8 +14,12 @@ const SidbarBox = styled.div`
     column-gap: 10px;
     flex-direction: column-reverse;
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: 10px;
+    bottom: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: ${({theme}) => theme.colors.box_outline__side_bar};
 
     > * {
         display: flex;
