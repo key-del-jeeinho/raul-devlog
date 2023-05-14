@@ -21,12 +21,29 @@ import Link from "next/link";
 
 const TemplateStyle = styled.div`
     .content-container {
+        position: relative;
         align-items: center;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 100vw;
         height: calc(100vh - ${NAV_BAR_HEIGHT_PX}px - 4px);
+    }
+
+    .z-index-100 {
+        position: relative;
+        z-index: 100;
+    }
+
+    .z-index-200 {
+        position: relative;
+        z-index: 200;
+    }
+    .aligin-center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 `
 
@@ -48,31 +65,37 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
     return (
         <TemplateStyle>
         <Background>
-            <SideBar />
-            <NavBar />
+            <div className="z-index-200"><SideBar /></div>
+            <div className="z-index-200"><NavBar /></div>
             <div className="content-container">
-                <div>
-                    <div style={{marginBottom: "25rem"}} />
-                    <SubTitle>{subTitle.text}</SubTitle>
-                    <div style={{marginBottom: "1.5rem"}}/>
-                    <Title>{title.text}</Title>
-                    <div style={{marginBottom: "8rem"}} />
+                <div style={{marginBottom: "25vh"}} />
+                <div className="z-index-100">
+                    <div className="aligin-center">
+                        <SubTitle>{subTitle.text}</SubTitle>
+                    </div>
                 </div>
-                <Link href={newestArticle.link}>
-                    <PrimaryButton fadeIn={true} onClick={() => {}}>
-                        {newestArticle.text}
-                    </PrimaryButton>
-                </Link>
-                <div style={{marginBottom: "25rem"}} />
-                <div style={{textAlign: "center"}}>
+                <div style={{marginBottom: "1.5vh"}}/>
+                <div className="z-index-100 aligin-center">
+                    <Title>{title.text}</Title>
+                </div>
+                <div style={{marginBottom: "8vh"}} />
+                <div className="z-index-100 aligin-center">
+                    <Link href={newestArticle.link}>
+                        <PrimaryButton fadeIn={true} onClick={() => {}}>
+                            {newestArticle.text}
+                        </PrimaryButton>
+                    </Link>
+                </div>
+                <div style={{marginBottom: "25vh"}} />
+                <div className="z-index-100 aligin-center">
                     <Label
                         labelStyle="colored"
                         labelSize="regular"
                     >Scroll</Label>
                 </div>
-                <div style={{marginBottom: "1rem"}} />
-                <Icon type="ic24_scroll-down" color="#000000"/>
-                <div style={{marginBottom: "1rem"}} />
+                <div style={{marginBottom: "1vh"}} />
+                <Icon className="z-index-100" type="ic24_scroll-down" color="#000000"/>
+                <div style={{marginBottom: "1vh"}} />
             </div>
 
             
