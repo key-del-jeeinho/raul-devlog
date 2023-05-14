@@ -17,7 +17,13 @@ a {
 }
 
 html {
-    font-size: 10px;
+        font-size: 10px;
+}
+
+@media screen and (max-width:599px) {
+    html {
+        font-size: 7px;
+    }
 }
 
 html,body {
