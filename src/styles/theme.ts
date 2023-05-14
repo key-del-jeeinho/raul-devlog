@@ -49,6 +49,8 @@ export const lightTheme: DefaultTheme = {
         box_outline__label_monotone: black,
         text_fill__label_monotone: white,
         box_fill__label_monotone: black,
+
+        text_fill__background_circular_text: neutral4,
     },
     font_weights: {
         label: "bold",

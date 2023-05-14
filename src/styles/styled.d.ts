@@ -15,6 +15,7 @@ declare module "styled-components" {
             text_fill__label_texture: Color,
             text_fill__label_monotone: Color,
             text_fill__label_frame: Color,
+            text_fill__background_circular_text: Color,
 
             text_outline__label_frame: Color,
 
