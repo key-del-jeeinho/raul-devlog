@@ -5,6 +5,8 @@ import { ReactNode, useContext } from "react";
 import Direction from "../../interfaces/Direction";
 import { createContext } from "react";
 import Link from "next/link";
+import MobileLogo from "../molecules/MobileLogo";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type NavBarContextProp = {
     direction: Direction,
@@ -13,14 +15,20 @@ type NavBarContextProp = {
 const NavBarContext = createContext<NavBarContextProp | null>(null)
 
 export const NAV_BAR_HEIGHT_PX = 110
+export const MOBILE_NAV_BAR_HEIGHT_PX = 80
 const NavBarStyle = styled.div`
-    z-index: 1;
     position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
     height: ${NAV_BAR_HEIGHT_PX}px;
+    @media screen and (max-width:599px) {
+        height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
+        .logo {
+            visibility: hidden;
+        }
+    }
     background-color: ${({theme}) => theme.colors.box_fill__nav_bar};
     backdrop-filter: blur(20px);
 
@@ -29,6 +37,9 @@ const NavBarStyle = styled.div`
 const NavBarSpaceStyle = styled.div`
     width: 100vw;
     height: ${NAV_BAR_HEIGHT_PX}px;
+    @media screen and (max-width:599px) {
+        height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
+    }
 `
 
 interface Props {
@@ -38,11 +49,15 @@ interface Props {
 export default function NavBar({}: Props) {
     const theme = useTheme()
     const iconColor = theme.colors.icon_fill__nav_bar
+    const isMobile = useIsMobile()
+    const logo = isMobile ? (<NavBar.MobileLogo/>) : (<NavBar.Logo/>)
     return (
         <>
         <NavBarStyle>
             <NavBar.Left>
-                <Link href="/"><NavBar.Logo/></Link>
+                <Link href="/#home">
+                    {logo}
+                </Link>
             </NavBar.Left>
             <NavBar.Right>
                 <NavBar.Attribute><Link href="/about-me">About.me</Link></NavBar.Attribute>
@@ -67,11 +82,22 @@ NavBar.Logo = function NavBarLogo(): JSX.Element {
     )
 }
 
+NavBar.MobileLogo = function LabBarMobileLogo(): JSX.Element {
+    return (
+        <div style={{paddingTop: "80px", paddingLeft: "30px"}}>
+            <MobileLogo/>
+        </div>
+    )
+}
+
 const NavBarLeftStyle = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: ${NAV_BAR_HEIGHT_PX / 2}px;
+    @media screen and (max-width:599px) {
+        padding-right: ${MOBILE_NAV_BAR_HEIGHT_PX / 2}px;
+    }
 `
 
 NavBar.Left = function NavBarLeft({children}: NavBarComponentProps): JSX.Element {
@@ -89,6 +115,9 @@ const NavBarRightStyle = styled.div`
     flex-direction: row;
     align-items: center;
     padding-right: ${NAV_BAR_HEIGHT_PX / 2}px;
+    @media screen and (max-width:599px) {
+        padding-right: ${MOBILE_NAV_BAR_HEIGHT_PX / 2}px;
+    }
 `
 
 NavBar.Right = function NavBarRight({children}: NavBarComponentProps): JSX.Element {
