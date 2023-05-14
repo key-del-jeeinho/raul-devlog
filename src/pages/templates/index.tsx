@@ -7,7 +7,6 @@ import plant002 from "../../../public/images/img_plant-002.png"
 import plant003 from "../../../public/images/img_plant-003.png"
 import plant004 from "../../../public/images/img_plant-004.png"
 import plant005 from "../../../public/images/img_plant-005.png"
-import plant006 from "../../../public/images/img_plant-006.png"
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
@@ -29,6 +28,10 @@ const TemplateStyle = styled.div`
         justify-content: space-between;
         width: 100vw;
         height: calc(100vh - ${NAV_BAR_HEIGHT_PX}px - 4px);
+    }
+
+    .relative {
+        position: relative;
     }
 
     .z-index-100 {
@@ -99,33 +102,41 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
             </div>
 
             
-            <div style={{zIndex: 2}}><DraggableBouncingImage 
-                src={plant001}
-                alt={'test'}
-                width={184}
-                isFixed={false}
-                fadeIn={true}
-            /></div>
-            <div style={{zIndex: 1}}><DraggableBouncingImage 
-                src={plant002}
-                alt={'test'}
-                width={193}
-                isFixed={false}
-                fadeIn={true}
-            /></div>
+            <span style={{zIndex: 2}} className="relative">
+                <DraggableBouncingImage 
+                    src={plant001}
+                    alt={'test'}
+                    width={184}
+                    isFixed={false}
+                    fadeIn={true}
+                />
+            </span>
+            <span style={{zIndex: 1}} className="relative">
+                <DraggableBouncingImage 
+                    src={plant002}
+                    alt={'test'}
+                    width={193}
+                    isFixed={false}
+                    fadeIn={true}
+                />
+            </span>
 
-            <div style={{zIndex: 3}}><DraggableBouncingImage 
-                src={plant003}
-                alt={'test'}
-                width={224}
-                isFixed={false}
-                fadeIn={true}
-            /></div>
+            <span style={{zIndex: 3}} className="relative">
+                <DraggableBouncingImage 
+                    src={plant003}
+                    alt={'test'}
+                    width={224}
+                    isFixed={false}
+                    fadeIn={true}
+                />
+            </span>
+
             <DraggableBouncingLabel
                 style="monotone"
                 size="regular"
                 isFixed={false}
             >SERVER</DraggableBouncingLabel>
+
             <DraggableBouncingLabel
                 style="frame"
                 size="regular"
@@ -133,7 +144,7 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
             >Blog</DraggableBouncingLabel>
 
             
-            <div>
+            <span>
                 <DraggableComponent isFixed={false}>
                     <CircularText
                         radius={210} 
@@ -144,22 +155,26 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
                         fontWeight='bold'
                     />
                 </DraggableComponent>
-            </div>
+            </span>
 
-            <DraggableBouncingImage 
-                src={plant004}
-                alt={'test'}
-                width={121}
-                isFixed={false}
-                fadeIn={true}
-            />
-            <DraggableBouncingImage 
-                src={plant005}
-                alt={'test'}
-                width={158}
-                isFixed={false}
-                fadeIn={true}
-            />
+            <span style={{zIndex: 3}} className="relative">
+                <DraggableBouncingImage 
+                    src={plant004}
+                    alt={'test'}
+                    width={121}
+                    isFixed={false}
+                    fadeIn={true}
+                />
+            </span>
+            <span style={{zIndex: 3}} className="relative">
+                <DraggableBouncingImage 
+                    src={plant005}
+                    alt={'test'}
+                    width={158}
+                    isFixed={false}
+                    fadeIn={true}
+                />
+            </span>
             <DraggableBouncingLabel
                 style="texture"
                 size="regular"
