@@ -14,6 +14,7 @@ export default class DefaultDocument extends Document {
         <Head>
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
           <link rel="stylesheet" type="text/css" href="https://webfontworld.github.io/PyeongChang/PyeongChang.css" />
+          <link rel="stylesheet" type="text/css" href="https://webfontworld.github.io/PyeongChang/PyeongChangPeace.css"/>
           <meta charSet='utf-8'/>
         </Head>
         <body>
