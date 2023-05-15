@@ -3,49 +3,49 @@ import texture003 from '../../public/images/img_texture-003.png'
 import texture004 from '../../public/images/img_texture-004.png'
 import flower001 from '../../public/images/img_flower-001.png'
 import paper002 from '../../public/images/img_paper-002.png'
-import { black, neutral4, primary, primary_light, white } from "./colors";
+import { black, neutral2, neutral4, primary, primary_light, white } from "./colors";
 
 export const darkTheme: DefaultTheme = {
     colors: {
-        icon_fill__DEFAULT: black,
+        icon_fill__DEFAULT: white,
         
-        text_fill__title: black,
+        text_fill__title: white,
 
-        text_fill__sub_title: black,
+        text_fill__sub_title: white,
 
-        icon_fill__nav_bar: black,
-        text_fill__nav_bar: black,
+        icon_fill__nav_bar: white,
+        text_fill__nav_bar: white,
         box_fill__nav_bar: "rgba(255, 255, 255, 0.1)",
         box_outline__nav_bar: "rgba(0, 0, 0, 0.1)",
 
-        box_outline__side_bar: "rgba(255, 255, 255, 0.1)",
+        box_outline__side_bar: "rgba(0, 0, 0, 0.1)",
 
         text_fill__primary_button: white,
-        box_fill__primary_button: primary,
-        box_shadow__primary_button: black,
+        box_fill__primary_button: black,
+        box_shadow__primary_button: primary,
 
-        text_fill__button: black,
+        text_fill__button: white,
         box_outline__button: primary,
-        box_fill__button: white,
+        box_fill__button: black,
         box_shadow__button: primary_light,
 
         text_fill__label_texture: black,
         box_outline__label_texture: black,
 
         text_fill__label_colored: primary,
-        box_fill__label_colored: white,
-        box_outline__label_colored: black,
+        box_fill__label_colored: black,
+        box_outline__label_colored: white,
 
-        box_fill__label_frame: white,
-        text_fill__label_frame: white,
-        box_outline__label_frame: black,
-        text_outline__label_frame: black,
+        box_fill__label_frame: black,
+        text_fill__label_frame: black,
+        box_outline__label_frame: white,
+        text_outline__label_frame: white,
 
-        box_outline__label_monotone: black,
-        text_fill__label_monotone: white,
-        box_fill__label_monotone: black,
+        box_outline__label_monotone: white,
+        text_fill__label_monotone: black,
+        box_fill__label_monotone: white,
 
-        text_fill__background_circular_text: neutral4,
+        text_fill__background_circular_text: neutral2,
     },
     font_weights: {
         label: "bold",
@@ -64,10 +64,11 @@ export const darkTheme: DefaultTheme = {
         button: "1.6rem",
     },
     font_families: {
-        title: "PyeongChang",
+        title: "PyeongChangPeace",
         sub_title: "Pretendard",
         primary_button: "Pretendard",
         button: "Pretendard",
+        background_circular_text: "DOSPilgiMedium",
     },
     box_sizes: {
         fixed_button__width: "10rem",
