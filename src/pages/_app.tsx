@@ -37,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </ThemeProvider>
       </RecoilRoot>
+      <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime" defer/>
     </>
   )
 }
