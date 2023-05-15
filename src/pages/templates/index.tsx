@@ -7,6 +7,7 @@ import plant002 from "../../../public/images/img_plant-002.png"
 import plant003 from "../../../public/images/img_plant-003.png"
 import plant004 from "../../../public/images/img_plant-004.png"
 import plant005 from "../../../public/images/img_plant-005.png"
+import plant007 from "../../../public/images/img_plant-007.png"
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
@@ -18,6 +19,7 @@ import styled, { DefaultTheme, useTheme } from "styled-components";
 import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import BouncingLabel from "@/components/molecules/BouncingLabel";
+import useBlogTheme from "@/hooks/useBlogTheme";
 
 const TemplateStyleClassDefinition = styled.div`
     .content-container {
@@ -33,13 +35,15 @@ const TemplateStyleClassDefinition = styled.div`
 `
 
 function Canvas({theme}: {theme: DefaultTheme}) {
+    const [blogTheme] = useBlogTheme()
     const circularTextColor = theme.colors.text_fill__background_circular_text
+    const circularTextFontFamilly = theme.font_families.background_circular_text
     return (<div className="absolute top-50vh left-50vw">
                 <span className="absolute z-1 translate-x--195% translate-y--130%">
                     <DraggableBouncingImage src={plant002} alt={'화분에 꽂혀있는 난초 그림'} width={193} isFixed={true} fadeIn={true} />
                 </span>
                 <span className="absolute z-2 translate-x--230% translate-y--30%">
-                    <DraggableBouncingImage src={plant001} alt={'네모난 유리화분 안에서 성장중인 식물 사진'} width={184} isFixed={true} fadeIn={true} />
+                    <DraggableBouncingImage src={blogTheme == 'light' ? plant001 : plant007} alt={'네모난 유리화분 안에서 성장중인 식물 사진'} width={184} isFixed={true} fadeIn={true} />
                 </span>
                 <span className="absolute z-3 translate-x--145% translate-y--105%">
                     <DraggableBouncingImage src={plant003} alt={'배경이 없는 성장중인 이파리들'} width={224} isFixed={true} fadeIn={true} />
@@ -61,7 +65,8 @@ function Canvas({theme}: {theme: DefaultTheme}) {
                 </span>
                 <span className="absolute z-1 translate-x-7% translate-y--70%">
                     <DraggableComponent isFixed={true}>
-                        <CircularText radius={230} text='HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING' textBy='inside' fontColor={circularTextColor} fontSize='32px' fontWeight='bold' />
+                        <CircularText radius={230} text='HI! I AM A JUNIOR SERVER ENGINEER. I MAINLY USE KOTLIN AND SPRING' textBy='inside'
+                                      fontColor={circularTextColor} fontSize='32px' fontWeight='bold' fontFamilly={circularTextFontFamilly}/>
                     </DraggableComponent>
                 </span>
             </div>)
