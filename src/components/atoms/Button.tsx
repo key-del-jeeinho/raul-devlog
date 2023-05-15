@@ -67,7 +67,7 @@ interface Props {
 export default function Button({children, fixed, marginOverflowedShadow, fadeIn, onClick}: Props) {
     return (<Button3DStyle marginOverflowedShadow={marginOverflowedShadow??false}>
         <ButtonStyle fadeIn={fadeIn??false} fixed={fixed}>
-            <button onClick={onClick}>{children}</button>
+            <button onClick={onClick} aria-roledescription="button">{children}</button>
         </ButtonStyle>
     </Button3DStyle>)
 }

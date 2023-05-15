@@ -44,6 +44,6 @@ interface Props {
 
 export default function PrimaryButton({children, fadeIn, onClick}: Props) {
     return (<PrimaryButtonStyle fadeIn={fadeIn??false}>
-        <button onClick={onClick}>{children}</button>
+        <button onClick={onClick} aria-roledescription="button">{children}</button>
     </PrimaryButtonStyle>)
 }

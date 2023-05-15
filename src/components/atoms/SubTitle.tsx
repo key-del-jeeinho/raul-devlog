@@ -12,5 +12,5 @@ interface Props {
 }
 
 export default function SubTitle({children}: Props) {
-    return (<SubTitleStyle>{children}</SubTitleStyle>)
+    return (<SubTitleStyle><h3>{children}</h3></SubTitleStyle>)
 }

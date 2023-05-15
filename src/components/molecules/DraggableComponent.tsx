@@ -9,14 +9,14 @@ interface NodeProps {
 }
 
 const DraggableNode = styled.div<NodeProps>`
-    transition: ${props => props.needFixed ? `transform 0.3s` : `transform 0.1s`};
+    transition: ${props => props.needFixed ? "transform 0.3s" : "transform 0.1s"};
     cursor: grab;
-    display: inline-block
+    display: inline-block;
 `
 
 interface Props {
     children: JSX.Element,
-    isFixed: boolean
+    isFixed: boolean,
 }
 
 export default function DraggableComponent({ children, isFixed }: Props) {

@@ -14,5 +14,5 @@ interface Props {
 }
 
 export default function Background({children}: Props) {
-    return <BackgroundStyle>{children}</BackgroundStyle>
+    return <BackgroundStyle aria-label="배경">{children}</BackgroundStyle>
 }
