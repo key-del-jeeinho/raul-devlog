@@ -12,5 +12,5 @@ interface Props {
 }
 
 export default function Title({children}: Props) {
-    return (<TitleStyle><h2>{children}</h2></TitleStyle>)
+    return (<TitleStyle><h1>{children}</h1></TitleStyle>)
 }
