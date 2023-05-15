@@ -68,6 +68,7 @@ export const lightTheme: DefaultTheme = {
         sub_title: "Pretendard",
         primary_button: "Pretendard",
         button: "Pretendard",
+        background_circular_text: "Pretendard",
     },
     box_sizes: {
         fixed_button__width: "10rem",

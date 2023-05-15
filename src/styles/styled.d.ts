@@ -59,6 +59,7 @@ declare module "styled-components" {
             sub_title: string,
             primary_button: string,
             button: string,
+            background_circular_text: string
         },
         box_sizes: {
             fixed_button__width: string,
