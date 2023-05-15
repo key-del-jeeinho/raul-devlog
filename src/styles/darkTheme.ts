@@ -1,19 +1,14 @@
-import { DefaultTheme } from "styled-components";
-import texture001 from '../../public/images/img_texture-001.png'
-import texture002 from '../../public/images/img_texture-002.png'
+import { DefaultTheme } from "styled-components"
+import texture003 from '../../public/images/img_texture-003.png'
+import texture004 from '../../public/images/img_texture-004.png'
 import flower001 from '../../public/images/img_flower-001.png'
 import paper002 from '../../public/images/img_paper-002.png'
+import { black, neutral4, primary, primary_light, white } from "./colors";
 
-const primary = "#1B5E20"
-const primary_light = "#206D1F"
-const black = "#000000"
-const neutral2 = "#424242"
-const neutral3 = "#9E9E9E"
-const neutral4 = "#E0E0E0"
-const white = "#FFFFFF"
-
-export const lightTheme: DefaultTheme = {
+export const darkTheme: DefaultTheme = {
     colors: {
+        icon_fill__DEFAULT: black,
+        
         text_fill__title: black,
 
         text_fill__sub_title: black,
@@ -81,10 +76,9 @@ export const lightTheme: DefaultTheme = {
         fixed_primary__button_height: "6rem",
     },
     images: {
-        box_texture__page: texture001.src,
-        box_texture__side_bar: texture002.src,
+        box_texture__page: texture003.src,
+        box_texture__side_bar: texture004.src,
         box_texture__label: paper002.src,
         box_content__dark_mode_button: flower001.src
     },
 }
-export const defaultTheme: DefaultTheme = lightTheme

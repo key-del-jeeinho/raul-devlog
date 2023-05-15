@@ -4,6 +4,7 @@ import "styled-components"
 declare module "styled-components" {
     export interface DefaultTheme {
         colors: {
+            icon_fill__DEFAULT: Color,
             icon_fill__nav_bar: Color,
 
             text_fill__title: Color,

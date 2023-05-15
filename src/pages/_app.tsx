@@ -1,10 +1,9 @@
+import ThemeProvider from '@/context/ThemeProvider'
 import GlobalStyle from '@/styles/GlobalStyle'
 import '@/styles/globals.css'
-import { defaultTheme, lightTheme } from '@/styles/theme'
 import { DefaultSeo, DefaultSeoProps } from 'next-seo'
 import type { AppProps } from 'next/app'
 import { RecoilRoot } from 'recoil'
-import { ThemeProvider } from 'styled-components'
 
 const DEFAULT_SEO: DefaultSeoProps = {
   title: "나무에 물 주듯 기술블로그",
@@ -32,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <DefaultSeo {...DEFAULT_SEO} />
       <RecoilRoot>
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider>
             <GlobalStyle />
             <Component {...pageProps} />
         </ThemeProvider>
