@@ -21,13 +21,14 @@ export const darkTheme: DefaultTheme = {
         box_outline__side_bar: "rgba(0, 0, 0, 0.1)",
 
         text_fill__primary_button: white,
+        box_outline__primary_button: primary,
         box_fill__primary_button: black,
         box_shadow__primary_button: primary,
 
         text_fill__button: white,
         box_outline__button: primary,
         box_fill__button: black,
-        box_shadow__button: primary_light,
+        box_shadow__button: primary,
 
         text_fill__label_texture: black,
         box_outline__label_texture: black,

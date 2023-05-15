@@ -13,6 +13,7 @@ const PrimaryButtonStyle = styled.span<PrimaryButtonStyleProps>`
         padding: 15px 20px 15px 20px;
         margin: 0px 8px 8px 0px;
         border-radius: 50vh;
+        border: 2px ${({theme}) => theme.colors.box_outline__primary_button} solid;
 
         background-color: ${(props) => props.theme.colors.box_fill__primary_button};
         color: ${(props) => props.theme.colors.text_fill__primary_button};
