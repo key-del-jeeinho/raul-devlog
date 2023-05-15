@@ -17,7 +17,6 @@ const NavBarContext = createContext<NavBarContextProp | null>(null)
 export const NAV_BAR_HEIGHT_PX = 110
 export const MOBILE_NAV_BAR_HEIGHT_PX = 80
 const NavBarStyle = styled.div`
-    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,13 +32,6 @@ const NavBarStyle = styled.div`
     backdrop-filter: blur(20px);
 
     border-bottom: 1px solid ${({theme}) => theme.colors.box_outline__nav_bar};
-`
-const NavBarSpaceStyle = styled.div`
-    width: 100vw;
-    height: ${NAV_BAR_HEIGHT_PX}px;
-    @media screen and (max-width:599px) {
-        height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
-    }
 `
 
 interface Props {
@@ -65,10 +57,17 @@ export default function NavBar({}: Props) {
                 <NavBar.Attribute isLast={true}><Icon type='ic32_menu' color={iconColor} /></NavBar.Attribute>
             </NavBar.Right>
         </NavBarStyle>
-        <NavBarSpaceStyle/>
         </>
     )
 }
+
+export const NavBarSpace = styled.div`
+    width: 100vw;
+    height: ${NAV_BAR_HEIGHT_PX}px;
+    @media screen and (max-width:599px) {
+        height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
+    }
+`
 
 interface NavBarComponentProps {
     children: ReactNode,

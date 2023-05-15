@@ -1,6 +1,6 @@
 import Background from "@/components/atoms/Background";
 import DraggableBouncingImage from "@/components/molecules/DraggableBouncingImage";
-import NavBar, { NAV_BAR_HEIGHT_PX } from "@/components/organisms/NavBar";
+import NavBar, { NAV_BAR_HEIGHT_PX, NavBarSpace } from "@/components/organisms/NavBar";
 import SideBar from "@/components/organisms/SideBar";
 import plant001 from "../../../public/images/img_plant-001.png"
 import plant002 from "../../../public/images/img_plant-002.png"
@@ -85,9 +85,11 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
     return (
         <TemplateStyleClassDefinition className="relative">
             <Background>
-                <div className="z-200"><SideBar /></div>
-                <div className="z-200"><NavBar /></div>
+                <div className="fixed z-200"><NavBar /></div>
+                <NavBarSpace/>
 
+                <div className="fixed z-200 left-10 bottom-10"><SideBar /></div>
+                
                 <div className="content-container">
                     <div className="mb-30vh" />
                     <div className="z-100">
@@ -107,13 +109,10 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
                     </div>
                     <div className="mb-20vh" />
                     <div className="z-100">
-                        <Label
-                            labelStyle="colored"
-                            labelSize="regular"
-                        >Scroll</Label>
+                        <Label labelStyle="colored" labelSize="regular">Scroll</Label>
                     </div>
                     <div className="mb-1vh" />
-                    <Icon className="z-100" type="ic24_scroll-down" color="#000000" />
+                    <Icon className="z-100" type="ic24_scroll-down" color={theme.colors.icon_fill__DEFAULT} />
                     <div className="mb-1vh" />
                 </div>
                 <Canvas theme={theme}/>
