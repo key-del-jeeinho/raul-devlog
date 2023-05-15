@@ -137,6 +137,7 @@ interface NavBarAttributeStyleProp {
 const NavBarAttributeStyle = styled.div<NavBarAttributeStyleProp>`
     display: inline-block;
     font-size: ${({theme}) => theme.font_sizes.nav_bar};
+    color: ${({theme}) => theme.colors.text_fill__nav_bar};
     align-items: center;
     ${({isLast, direction}) => {
         if(isLast) {
