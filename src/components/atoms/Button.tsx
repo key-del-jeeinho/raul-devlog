@@ -25,7 +25,7 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
         ${({theme, fixed}) => fixed ? `height: ${theme.box_sizes.fixed_button__height}` : ""};
         ${({fixed}) => fixed ? "" : "padding: 10px 10px 10px 10px"};
         
-        ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
+        ${(props) => props.fadeIn ? "transition: font-size 1000ms, box-shadow 1000ms, padding 1000ms, transform 1000ms;" : ""}
         appearance: none;
         border-style: none;
 
@@ -45,13 +45,13 @@ const ButtonStyle = styled.span<ButtonStyleProps>`
         :hover {
             box-shadow: 3px 3px ${(props) => props.theme.colors.box_shadow__button};
             transform: translate(1px, 1px);
-            transition: all 300ms;
+            transition: font-size 300ms, box-shadow 300ms, padding 300ms, transform 300ms;
         }
 
         :active {
             box-shadow: 2px 2px ${(props) => props.theme.colors.box_shadow__button};
             transform: translate(2px, 2px);
-            transition: all 100ms;
+            transition: font-size 100ms, box-shadow 100ms, padding 100ms, transform 100ms;
         }
     }
 `

@@ -6,7 +6,7 @@ interface PrimaryButtonStyleProps {
 
 const PrimaryButtonStyle = styled.span<PrimaryButtonStyleProps>`
     button {
-        ${(props) => props.fadeIn ? "transition: all 1s;" : ""}
+        ${(props) => props.fadeIn ? "transition: font-size 1000ms, box-shadow 1000ms, padding 1000ms, transform 1000ms;" : ""}
         appearance: none;
         border-style: none;
 
@@ -25,13 +25,13 @@ const PrimaryButtonStyle = styled.span<PrimaryButtonStyleProps>`
         :hover {
             box-shadow: 7px 7px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(1px, 1px);
-            transition: all 300ms;
+            transition: font-size 300ms, box-shadow 300ms, padding 300ms, transform 300ms;
         }
 
         :active {
             box-shadow: 4px 4px ${(props) => props.theme.colors.box_shadow__primary_button};
             transform: translate(4px, 4px);
-            transition: all 100ms;
+            transition: font-size 300ms, box-shadow 300ms, padding 300ms, transform 300ms;
         }
     }
 `
