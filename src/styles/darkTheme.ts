@@ -1,7 +1,7 @@
 import { DefaultTheme } from "styled-components"
 import texture003 from '../../public/images/img_texture-003.png'
 import texture004 from '../../public/images/img_texture-004.png'
-import flower001 from '../../public/images/img_flower-001.png'
+import flower002 from '../../public/images/img_flower-002.png'
 import paper002 from '../../public/images/img_paper-002.png'
 import { black, neutral2, neutral4, primary, primary_light, white } from "./colors";
 
@@ -81,6 +81,6 @@ export const darkTheme: DefaultTheme = {
         box_texture__page: texture003.src,
         box_texture__side_bar: texture004.src,
         box_texture__label: paper002.src,
-        box_content__dark_mode_button: flower001.src
+        box_content__dark_mode_button: flower002.src
     },
 }
