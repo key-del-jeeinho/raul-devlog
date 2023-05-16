@@ -8,6 +8,7 @@ import plant003 from "../../../public/images/img_plant-003.png"
 import plant004 from "../../../public/images/img_plant-004.png"
 import plant005 from "../../../public/images/img_plant-005.png"
 import plant007 from "../../../public/images/img_plant-007.png"
+import toggleDarkModeCommentImage from "../../../public/images/img_toggle-dark-mode-comment.png"
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
@@ -20,6 +21,8 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import BouncingLabel from "@/components/molecules/BouncingLabel";
 import useBlogTheme from "@/hooks/useBlogTheme";
+import Image from "next/image";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const TemplateStyleClassDefinition = styled.div`
     .content-container {
@@ -35,10 +38,12 @@ const TemplateStyleClassDefinition = styled.div`
 `
 
 function Canvas({theme}: {theme: DefaultTheme}) {
+    const isMobile = useIsMobile()
     const [blogTheme] = useBlogTheme()
     const circularTextColor = theme.colors.text_fill__background_circular_text
     const circularTextFontFamilly = theme.font_families.background_circular_text
-    return (<div className="absolute top-50vh left-50vw">
+    return (<>
+        <div className="absolute top-50vh left-50vw">
                 <span className="absolute z-1 translate-x--195% translate-y--130%">
                     <DraggableBouncingImage src={plant002} alt={'화분에 꽂혀있는 난초 그림'} width={193} isFixed={true} fadeIn={true} />
                 </span>
@@ -69,7 +74,11 @@ function Canvas({theme}: {theme: DefaultTheme}) {
                                       fontColor={circularTextColor} fontSize='32px' fontWeight='bold' fontFamilly={circularTextFontFamilly}/>
                     </DraggableComponent>
                 </span>
-            </div>)
+            </div>
+            <div className="absolute bottom-0vh left-0vw">
+                {!isMobile ? <Image src={toggleDarkModeCommentImage} width={86} alt="다크모드 토글 안내 말풍선" className="absolute translate-x-200% translate-y--230%"/> : <></>}
+            </div>
+        </>)
 }
 
 interface Prop {
