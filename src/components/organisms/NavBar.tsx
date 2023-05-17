@@ -6,7 +6,7 @@ import Direction from "../../interfaces/Direction";
 import { createContext } from "react";
 import Link from "next/link";
 import MobileLogo from "../molecules/MobileLogo";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { MOBILE_MAX_WIDTH, useIsMobile } from "@/hooks/useIsMobile";
 
 type NavBarContextProp = {
     direction: Direction,
@@ -22,7 +22,7 @@ const NavBarStyle = styled.div`
     justify-content: space-between;
     width: 100vw;
     height: ${NAV_BAR_HEIGHT_PX}px;
-    @media screen and (max-width:599px) {
+    @media screen and (max-width: ${MOBILE_MAX_WIDTH}) {
         height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
         .logo {
             visibility: hidden;
@@ -64,7 +64,7 @@ export default function NavBar({}: Props) {
 export const NavBarSpace = styled.div`
     width: 100vw;
     height: ${NAV_BAR_HEIGHT_PX}px;
-    @media screen and (max-width:599px) {
+    @media screen and (max-width: ${MOBILE_MAX_WIDTH}) {
         height: ${MOBILE_NAV_BAR_HEIGHT_PX}px;
     }
 `
@@ -94,7 +94,7 @@ const NavBarLeftStyle = styled.div`
     flex-direction: row;
     align-items: center;
     padding-right: ${NAV_BAR_HEIGHT_PX / 2}px;
-    @media screen and (max-width:599px) {
+    @media screen and (max-width: ${MOBILE_MAX_WIDTH}) {
         padding-right: ${MOBILE_NAV_BAR_HEIGHT_PX / 2}px;
     }
 `
@@ -114,7 +114,7 @@ const NavBarRightStyle = styled.div`
     flex-direction: row;
     align-items: center;
     padding-right: ${NAV_BAR_HEIGHT_PX / 2}px;
-    @media screen and (max-width:599px) {
+    @media screen and (max-width: ${MOBILE_MAX_WIDTH}) {
         padding-right: ${MOBILE_NAV_BAR_HEIGHT_PX / 2}px;
     }
 `

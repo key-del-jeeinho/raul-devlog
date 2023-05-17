@@ -1,3 +1,4 @@
+import { MOBILE_MAX_WIDTH } from "@/hooks/useIsMobile";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
@@ -20,7 +21,7 @@ html {
         font-size: 10px;
 }
 
-@media screen and (max-width:599px) {
+@media screen and (max-width: ${MOBILE_MAX_WIDTH}) {
     html {
         font-size: 7px;
     }
