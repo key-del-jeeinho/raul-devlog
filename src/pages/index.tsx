@@ -1,4 +1,4 @@
-import Template from "./templates";
+import Template from "../templates/index.template";
 
 const templateData = {
   title: {

@@ -2,14 +2,14 @@ import Background from "@/components/atoms/Background";
 import DraggableBouncingImage from "@/components/molecules/DraggableBouncingImage";
 import NavBar, { NAV_BAR_HEIGHT_PX, NavBarSpace } from "@/components/organisms/NavBar";
 import SideBar from "@/components/organisms/SideBar";
-import plant001 from "../../../public/images/img_plant-001.png"
-import plant002 from "../../../public/images/img_plant-002.png"
-import plant003 from "../../../public/images/img_plant-003.png"
-import plant004 from "../../../public/images/img_plant-004.png"
-import plant005 from "../../../public/images/img_plant-005.png"
-import plant007 from "../../../public/images/img_plant-007.png"
-import toggleDarkModeCommentImage from "../../../public/images/img_toggle-dark-mode-comment.png"
-import toggleLightModeCommentImage from "../../../public/images/img_toggle-light-mode-comment.png"
+import plant001 from "@/../public/images/img_plant-001.png"
+import plant002 from "@/../public/images/img_plant-002.png"
+import plant003 from "@/../public/images/img_plant-003.png"
+import plant004 from "@/../public/images/img_plant-004.png"
+import plant005 from "@/../public/images/img_plant-005.png"
+import plant007 from "@/../public/images/img_plant-007.png"
+import toggleDarkModeCommentImage from "@/../public/images/img_toggle-dark-mode-comment.png"
+import toggleLightModeCommentImage from "@/../public/images/img_toggle-light-mode-comment.png"
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
