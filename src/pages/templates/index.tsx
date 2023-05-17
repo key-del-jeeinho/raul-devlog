@@ -22,8 +22,8 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import BouncingLabel from "@/components/molecules/BouncingLabel";
 import useBlogTheme from "@/hooks/useBlogTheme";
-import Image from "next/image";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import BouncingImage from "@/components/molecules/BouncingImage";
 
 const TemplateStyleClassDefinition = styled.div`
     .content-container {
@@ -78,7 +78,11 @@ function Canvas({theme}: {theme: DefaultTheme}) {
                 </span>
             </div>
             <div className="absolute bottom-0vh left-0vw">
-                {!isMobile ? <Image src={toggleThemeCommentImage} width={100} alt="다크모드 토글 안내 말풍선" className="absolute translate-x-155% translate-y--170% transition-all-500"/> : <></>}
+                {!isMobile
+                    ? <span  className="absolute translate-x-155% translate-y--170% transition-all-500">
+                        <BouncingImage src={toggleThemeCommentImage} width={100} alt="다크모드 토글 안내 말풍선"/>
+                    </span>
+                    : <></>}
             </div>
         </>)
 }
