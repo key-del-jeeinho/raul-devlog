@@ -4,5 +4,6 @@ const black = "#000000"
 const neutral2 = "#424242"
 const neutral3 = "#9E9E9E"
 const neutral4 = "#E0E0E0"
+const neutral5 = "#FAFAFA"
 const white = "#FFFFFF"
-export {primary, primary_light, black, neutral2, neutral3, neutral4, white}
+export {primary, primary_light, black, neutral2, neutral3, neutral4, neutral5, white}
