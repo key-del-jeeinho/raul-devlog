@@ -3,7 +3,7 @@ import texture003 from '../../public/images/img_texture-003.png'
 import texture004 from '../../public/images/img_texture-004.png'
 import flower002 from '../../public/images/img_flower-002.png'
 import paper002 from '../../public/images/img_paper-002.png'
-import { black, neutral2, neutral4, primary, primary_light, white } from "./colors";
+import { black, neutral2, neutral3, neutral4, neutral5, primary, primary_light, white } from "./colors";
 
 export const darkTheme: DefaultTheme = {
     colors: {
@@ -19,6 +19,12 @@ export const darkTheme: DefaultTheme = {
         box_outline__nav_bar: "rgba(0, 0, 0, 0.1)",
 
         box_outline__side_bar: "rgba(0, 0, 0, 0.1)",
+
+        text_fill__article_summary_box_description: neutral3,
+
+        text_fill__article_summary_box: white,
+        box_outline__article_summary_box: neutral4,
+        box_fill__article_summary_box: black,
 
         text_fill__primary_button: white,
         box_outline__primary_button: primary,

@@ -10,6 +10,8 @@ declare module "styled-components" {
             text_fill__title: Color,
             text_fill__sub_title: Color,
             text_fill__nav_bar: Color,
+            text_fill__article_summary_box: Color,
+            text_fill__article_summary_box_description: Color,
             text_fill__primary_button: Color,
             text_fill__button: Color,
             text_fill__label_colored: Color,
@@ -22,6 +24,7 @@ declare module "styled-components" {
 
             box_outline__nav_bar: Color,
             box_outline__side_bar: Color,
+            box_outline__article_summary_box: Color,
             box_outline__primary_button: Color,
             box_outline__button: Color,
             box_outline__label_frame: Color,
@@ -30,6 +33,7 @@ declare module "styled-components" {
             box_outline__label_monotone: Color,
 
             box_fill__nav_bar: Color,
+            box_fill__article_summary_box: Color
             box_fill__primary_button: Color,
             box_fill__button: Color,
             box_fill__label_colored: Color,
