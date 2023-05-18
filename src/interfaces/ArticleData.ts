@@ -6,7 +6,6 @@ export default interface ArticleData {
 export interface ArticleMetadata {
     title: string,
     subtitle: string,
-    description: string,
     tags: string[],
     createAt: string,
 }
