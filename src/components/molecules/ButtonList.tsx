@@ -60,6 +60,3 @@ ButtonList.Button = function ButtonListButton ({
         >{children}</Button>
     </div>)
 }
-
-interface ThemeButtonProps {
-}
