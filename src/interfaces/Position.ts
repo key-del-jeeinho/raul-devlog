@@ -4,8 +4,8 @@ export default interface Position {
 }
 
 export class SimplePosition implements Position {
-    x: number;
-    y: number;
+    x: number
+    y: number
     
     constructor(x: number, y: number) {
         this.x = x;
