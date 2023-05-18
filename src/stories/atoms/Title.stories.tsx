@@ -1,13 +1,13 @@
-import Title from "../../components/atoms/Title";
+import PrimaryTitle from "../../components/atoms/PrimaryTitle";
 import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof Title> = {
+const meta: Meta<typeof PrimaryTitle> = {
     title: 'Title',
-    component: Title
+    component: PrimaryTitle
 }
 
 export default meta
-type Story = StoryObj<typeof Title>
+type Story = StoryObj<typeof PrimaryTitle>
 
 export const Primary: Story = {
     args: {

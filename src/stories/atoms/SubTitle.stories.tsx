@@ -1,13 +1,13 @@
-import SubTitle from "../../components/atoms/SubTitle";
+import PrimarySubTitle from "../../components/atoms/PrimarySubTitle";
 import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof SubTitle> = {
+const meta: Meta<typeof PrimarySubTitle> = {
     title: 'SubTitle',
-    component: SubTitle
+    component: PrimarySubTitle
 }
 
 export default meta
-type Story = StoryObj<typeof SubTitle>
+type Story = StoryObj<typeof PrimarySubTitle>
 
 export const Primary: Story = {
     args: {

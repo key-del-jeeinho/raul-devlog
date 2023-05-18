@@ -13,8 +13,8 @@ import toggleLightModeCommentImage from "@/../public/images/img_toggle-light-mod
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
-import Title from "@/components/atoms/Title";
-import SubTitle from "@/components/atoms/SubTitle";
+import PrimaryTitle from "@/components/atoms/PrimaryTitle";
+import PrimarySubTitle from "@/components/atoms/PrimarySubTitle";
 import PrimaryButton from "@/components/atoms/PrimaryButton";
 import Label from "@/components/atoms/Label";
 import styled, { DefaultTheme, useTheme } from "styled-components";
@@ -113,11 +113,11 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
                 <div className="content-container">
                     <div className="mb-30vh" />
                     <div className="z-100">
-                        <SubTitle>{subTitle.text}</SubTitle>
+                        <PrimarySubTitle>{subTitle.text}</PrimarySubTitle>
                     </div>
                     <div className="mb-1.5vh" />
                     <div className="z-100">
-                        <Title>{title.text}</Title>
+                        <PrimaryTitle>{title.text}</PrimaryTitle>
                     </div>
                     <div className="mb-8vh" />
                     <div className="z-100">

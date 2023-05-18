@@ -11,6 +11,6 @@ interface Props {
     children: string
 }
 
-export default function SubTitle({children}: Props) {
+export default function PrimarySubTitle({children}: Props) {
     return (<SubTitleStyle><h3>{children}</h3></SubTitleStyle>)
 }
