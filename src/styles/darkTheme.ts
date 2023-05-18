@@ -3,7 +3,7 @@ import texture003 from '../../public/images/img_texture-003.png'
 import texture004 from '../../public/images/img_texture-004.png'
 import flower002 from '../../public/images/img_flower-002.png'
 import paper002 from '../../public/images/img_paper-002.png'
-import { black, neutral2, neutral3, neutral4, neutral5, primary, primary_light, white } from "./colors";
+import { black, neutral2, neutral3, neutral4, primary, white } from "./colors";
 
 export const darkTheme: DefaultTheme = {
     colors: {
