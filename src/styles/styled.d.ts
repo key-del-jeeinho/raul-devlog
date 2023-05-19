@@ -42,6 +42,7 @@ declare module "styled-components" {
             box_fill__label_frame: Color,
             box_fill__label_monotone: Color,
 
+            box_shadow__article_summary_box: Color,
             box_shadow__primary_button: Color,
             box_shadow__button: Color,
         },

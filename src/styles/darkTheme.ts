@@ -11,7 +11,7 @@ export const darkTheme: DefaultTheme = {
         
         text_fill__primary_title: white,
         text_fill__primary_sub_title: white,
-        
+
         text_fill__secondary_title: white,
         text_fill__secondary_sub_title: white,
 
@@ -27,6 +27,7 @@ export const darkTheme: DefaultTheme = {
         text_fill__article_summary_box: white,
         box_outline__article_summary_box: neutral4,
         box_fill__article_summary_box: black,
+        box_shadow__article_summary_box: "rgba(0, 0, 0, 0.25)",
 
         text_fill__primary_button: white,
         box_outline__primary_button: primary,

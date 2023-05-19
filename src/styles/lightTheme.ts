@@ -26,7 +26,8 @@ export const lightTheme: DefaultTheme = {
 
         text_fill__article_summary_box: black,
         box_outline__article_summary_box: neutral4,
-        box_fill__article_summary_box: neutral5,
+        box_fill__article_summary_box: white,
+        box_shadow__article_summary_box: "rgba(217, 217, 217, 0.25)",
 
         text_fill__primary_button: white,
         box_outline__primary_button: primary,
