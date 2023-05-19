@@ -5,7 +5,18 @@ import ToggleThemeComment from "@/components/molecules/ToggleThemeComment";
 import ArticleSummaryBox from "@/components/organisms/ArticleSummaryBox";
 import NavBar, { NavBarSpace } from "@/components/organisms/NavBar";
 import SideBar from "@/components/organisms/SideBar";
+import useBlogTheme from "@/hooks/useBlogTheme";
 import ArticleData from "@/interfaces/ArticleData";
+import { DefaultTheme } from "styled-components";
+
+function Canvas({theme}: {theme: DefaultTheme}) {
+    const [blogTheme] = useBlogTheme()
+    return (<>
+        <div className="absolute top-50vh left-50vw">
+            <span className="absolute "
+        </div>
+    </>)
+}
 
 interface Prop {
     articles: ArticleData[],
@@ -24,7 +35,7 @@ export default function Template({articles}: Prop) {
             
             <div className="fixed z-200 left-10 bottom-10"><SideBar /></div>
             <ToggleThemeComment/>
-            
+
             <div className="flex flex-col items-center">
                 <div className="mb-5rem"/>
                 <SecondaryTitle>Dev.post</SecondaryTitle>
