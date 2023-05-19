@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-const TitleStyle = styled.span`
-    font-family: ${(props) => props.theme.font_families.title};
-    font-size: ${(props) => props.theme.font_sizes.title};
-    font-weight: ${(props) => props.theme.font_weights.title};
-    color: ${(props) => props.theme.colors.text_fill__title};
+const TitleStyle = styled.h1`
+    font-family: ${(props) => props.theme.font_families.primary_title};
+    font-size: ${(props) => props.theme.font_sizes.primary_title};
+    font-weight: ${(props) => props.theme.font_weights.primary_title};
+    color: ${(props) => props.theme.colors.text_fill__primary_title};
     transition: all 300ms;
 `
 
@@ -13,5 +13,5 @@ interface Props {
 }
 
 export default function PrimaryTitle({children}: Props) {
-    return (<TitleStyle><h1>{children}</h1></TitleStyle>)
+    return (<TitleStyle>{children}</TitleStyle>)
 }
