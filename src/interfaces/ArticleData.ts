@@ -1,4 +1,5 @@
 export default interface ArticleData {
+    identifier: string,
     metadata: ArticleMetadata,
     content: ArticleContent,
 }
