@@ -1,7 +1,8 @@
-import { ArticleMetadata } from "@/interfaces/ArticleData"
+import ArticleData, { ArticleMetadata } from "@/interfaces/ArticleData"
 import styled, { useTheme } from "styled-components"
 import Icon from "../atoms/Icon"
 import { Children, ReactNode } from "react"
+import Link from "next/link"
 
 const ArticleSummaryBoxStyle = styled.div`
     width: 540px;
@@ -22,26 +23,29 @@ const ArticleSummaryBoxStyle = styled.div`
 `
 
 interface Prop {
-    articleMetadata: ArticleMetadata
+    article: ArticleData
 }
 
-export default function ArticleSummaryBox({articleMetadata}: Prop) {
+export default function ArticleSummaryBox({article}: Prop) {
+    const {metadata, identifier} = article
     return (
+        <Link href={`/articles/${identifier}`}>
         <ArticleSummaryBoxStyle>
             <ArticleSummaryBox.Title>
-                {articleMetadata.title}
+                {metadata.title}
             </ArticleSummaryBox.Title>
             <div className="mb-1rem"/>
             <ArticleSummaryBox.Subtitle>
-                {articleMetadata.subtitle}
+                {metadata.subtitle}
             </ArticleSummaryBox.Subtitle>
             <div className="mb-1rem"/>
             <ArticleSummaryBox.Description>
-                {articleMetadata.createAt}
+                {metadata.createAt}
                 <span className="font-black">·</span>
-                {tagsToString(articleMetadata.tags)}
+                {tagsToString(metadata.tags)}
             </ArticleSummaryBox.Description>
         </ArticleSummaryBoxStyle>
+        </Link>
     )
 }
 
