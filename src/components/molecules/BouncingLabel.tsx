@@ -13,6 +13,9 @@ const BouncingLabelStyle = styled.span<BouncingLabelStyleProps>`
     & > * > * {
         transition: color 500ms, font-size 500ms;
         font-size: ${(props) => props.sizeRatio}em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 `
 
