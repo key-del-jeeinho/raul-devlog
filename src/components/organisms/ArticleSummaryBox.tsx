@@ -16,6 +16,8 @@ const ArticleSummaryBoxStyle = styled.div`
     border-color: ${({theme}) => theme.colors.box_outline__article_summary_box};
     border-style: solid;
 
+    box-shadow: ${({theme}) => theme.colors.box_shadow__article_summary_box} 0px 3px 5px;
+
     color: ${({theme}) => theme.colors.text_fill__article_summary_box};
 `
 
