@@ -9,9 +9,11 @@ export const lightTheme: DefaultTheme = {
     colors: {
         icon_fill__DEFAULT: black,
 
-        text_fill__title: black,
-
-        text_fill__sub_title: black,
+        text_fill__primary_title: black,
+        text_fill__primary_sub_title: black,
+        
+        text_fill__secondary_title: black,
+        text_fill__secondary_sub_title: black,
 
         icon_fill__nav_bar: black,
         text_fill__nav_bar: black,
@@ -56,14 +58,18 @@ export const lightTheme: DefaultTheme = {
     },
     font_weights: {
         label: "bold",
-        title: "bold",
-        sub_title: "regular",
+        primary_title: "bold",
+        primary_sub_title: "regular",
+        secondary_title: "bold",
+        secondary_sub_title: "regular",
         primary_button: "bold",
         button: "bold",
     },
     font_sizes: {
-        title: "9.6rem",
-        sub_title: "2.4rem",
+        primary_title: "9.6rem",
+        primary_sub_title: "2.4rem",
+        secondary_title: "4.8rem",
+        secondary_sub_title: "1.6rem",
         nav_bar: "2.4rem",
         label: "2.4rem",
         bigger_label: "2.8rem",
@@ -71,8 +77,10 @@ export const lightTheme: DefaultTheme = {
         button: "1.6rem",
     },
     font_families: {
-        title: "PyeongChang",
-        sub_title: "Pretendard",
+        primary_title: "PyeongChang",
+        primary_sub_title: "Pretendard",
+        secondary_title: "Pretendard",
+        secondary_sub_title: "Pretendard",
         primary_button: "Pretendard",
         button: "Pretendard",
         background_circular_text: "Pretendard",
