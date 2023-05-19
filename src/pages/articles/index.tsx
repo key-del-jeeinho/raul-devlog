@@ -1,4 +1,4 @@
-import Template from "@/templates/articles/[[...type]].template";
+import Template from "@/templates/articles/index.template";
 
 const sampleArticle = 
         {
