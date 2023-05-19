@@ -8,8 +8,6 @@ import plant003 from "@/../public/images/img_plant-003.png"
 import plant004 from "@/../public/images/img_plant-004.png"
 import plant005 from "@/../public/images/img_plant-005.png"
 import plant007 from "@/../public/images/img_plant-007.png"
-import toggleDarkModeCommentImage from "@/../public/images/img_toggle-dark-mode-comment.png"
-import toggleLightModeCommentImage from "@/../public/images/img_toggle-light-mode-comment.png"
 import DraggableBouncingLabel from "@/components/molecules/DraggableBouncingLabel";
 import CircularText from "@/components/atoms/CircularText";
 import DraggableComponent from "@/components/molecules/DraggableComponent";
@@ -22,8 +20,7 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import BouncingLabel from "@/components/molecules/BouncingLabel";
 import useBlogTheme from "@/hooks/useBlogTheme";
-import { useIsMobile } from "@/hooks/useIsMobile";
-import BouncingImage from "@/components/molecules/BouncingImage";
+import ToggleThemeComment from "@/components/molecules/ToggleThemeComment";
 
 const TemplateStyleClassDefinition = styled.div`
     .content-container {
@@ -39,11 +36,9 @@ const TemplateStyleClassDefinition = styled.div`
 `
 
 function Canvas({theme}: {theme: DefaultTheme}) {
-    const isMobile = useIsMobile()
     const [blogTheme] = useBlogTheme()
     const circularTextColor = theme.colors.text_fill__background_circular_text
     const circularTextFontFamilly = theme.font_families.background_circular_text
-    const toggleThemeCommentImage = blogTheme == 'light' ? toggleDarkModeCommentImage : toggleLightModeCommentImage
     return (<>
         <div className="absolute top-50vh left-50vw">
                 <span className="absolute z-1 translate-x--195% translate-y--130%">
@@ -77,13 +72,6 @@ function Canvas({theme}: {theme: DefaultTheme}) {
                     </DraggableComponent>
                 </span>
             </div>
-            <div className="absolute bottom-0vh left-0vw">
-                {!isMobile
-                    ? <span  className="absolute translate-x-155% translate-y--170% transition-all-500">
-                        <BouncingImage src={toggleThemeCommentImage} width={100} alt="다크모드 토글 안내 말풍선"/>
-                    </span>
-                    : <></>}
-            </div>
         </>)
 }
 
@@ -109,6 +97,7 @@ export default function Template({title, subTitle, newestArticle}: Prop) {
                 <NavBarSpace/>
 
                 <div className="fixed z-200 left-10 bottom-10"><SideBar /></div>
+            <ToggleThemeComment/>
                 
                 <div className="content-container">
                     <div className="mb-30vh" />
